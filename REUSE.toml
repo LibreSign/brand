@@ -14,3 +14,9 @@ path = ["manual/**/*.pdf"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2026 LibreSign contributors"
 SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+[[annotations]]
+path = ["source/fonts/montserrat/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2024 The Montserrat.Git Project Authors"
+SPDX-License-Identifier = "OFL-1.1"
