@@ -101,6 +101,31 @@
   The versioned vector file is the source of truth for public derivatives and official applications.
 ]
 
+#manual-page(theme, [Logo], [Construction and composition])[
+  #grid(
+    columns: (1.15fr, 0.85fr),
+    gutter: 10mm,
+    block(fill: white, inset: 10mm, height: 78mm)[
+      #align(center + horizon)[
+        #image("../source/artwork/libresign-logo.svg", width: 84%, alt: "Official LibreSign logo composition")
+      ]
+    ],
+    [
+      #text(font: theme.heading-font, size: 12pt, weight: "bold", fill: theme.accent)[Icon]
+      #v(2mm)
+      The signing gesture is the distinctive graphic element.
+
+      #v(7mm)
+      #text(font: theme.heading-font, size: 12pt, weight: "bold", fill: theme.accent)[Wordmark]
+      #v(2mm)
+      The LibreSign wordmark completes the official composition and must not be redrawn independently.
+    ],
+  )
+  #v(8mm)
+
+  The icon/wordmark relationship is fixed in the canonical vector artwork. Use the master file rather than reconstructing the composition manually.
+]
+
 #manual-page(theme, [Logo], [Brand integrity])[
   #rule-pair(
     theme,
@@ -211,6 +236,35 @@
 )
 
 #manual-page(theme, [Usage], [Application])[
+  #grid(
+    columns: (1fr, 1fr),
+    gutter: 7mm,
+    block(fill: white, inset: 8mm, height: 58mm)[
+      #align(center + horizon)[
+        #image("../source/artwork/libresign-logo.svg", width: 78%, alt: "Primary LibreSign logo on white")
+      ]
+    ],
+    block(fill: theme.soft, inset: 8mm, height: 58mm)[
+      #align(center + horizon)[
+        #image("../source/artwork/libresign-logo.svg", width: 78%, alt: "Primary LibreSign logo on a light green field")
+      ]
+    ],
+    block(fill: theme.ink, inset: 8mm, height: 58mm)[
+      #align(center + horizon)[
+        #image("../source/artwork/libresign-logo-reversed.svg", width: 78%, alt: "Reversed LibreSign logo on a dark neutral field")
+      ]
+    ],
+    block(fill: theme.accent, inset: 8mm, height: 58mm)[
+      #align(center + horizon)[
+        #image("../source/artwork/libresign-logo-reversed.svg", width: 78%, alt: "Reversed LibreSign logo on the primary teal field")
+      ]
+    ],
+  )
+  #v(7mm)
+
+  Use the primary artwork on light fields and the reversed artwork on dark or saturated fields. Always verify contrast and clear space.
+]
+, [Application])[
   #grid(
     columns: (1fr, 1fr),
     gutter: 7mm,
