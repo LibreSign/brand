@@ -65,7 +65,7 @@ Libre begins with an /i/ sound. Sign keeps its English pronunciation.
 The canonical master is `source/artwork/libresign-logo.svg`.
 
 #align(center)[
-  #image("../source/artwork/libresign-logo.svg", width: 72%)
+  #image("../source/artwork/libresign-logo.svg", width: 72%, alt: "LibreSign logo")
 ]
 
 #rule-card(
