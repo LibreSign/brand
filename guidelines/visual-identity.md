@@ -9,7 +9,7 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 
 The canonical logo master is:
 
-`source/artwork/libresign-logo.svg`
+`source/artwork/libresign-master.svg`
 
 All public derivatives should be generated from this master.
 
