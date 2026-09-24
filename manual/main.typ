@@ -23,8 +23,8 @@
   theme,
   [LibreSign Brand Manual],
   [Freedom and control for electronic signing],
-  "../source/artwork/libresign-logo.svg",
-  "Official LibreSign logo",
+  "../source/artwork/libresign-logo-reversed.svg",
+  "Official reversed LibreSign logo",
 )
 
 #toc-page(
@@ -268,7 +268,7 @@
 
 #back-cover(
   theme,
-  "../source/artwork/libresign-logo.svg",
+  "../source/artwork/libresign-logo-reversed.svg",
   "Official LibreSign logo",
   [libresign.coop/brand],
 )
