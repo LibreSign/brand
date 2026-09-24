@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: CC-BY-SA-4.0
 
 #import "theme.typ": theme
-#import "components.typ": cover, toc-page, section-page, manual-page, logo-stage, swatch, specimen, rule-pair, statement, back-cover
+#import "components.typ": cover, toc-page, section-page, manual-page, logo-stage, swatch, specimen, clear-space-diagram, rule-pair, statement, back-cover
 
 #set document(
   title: "LibreSign Brand Manual",
@@ -172,7 +172,16 @@
     theme,
     "Montserrat",
     [Display and UI],
-    [LIBRE / freedom to sign on your terms],
+    [LibreSign],
+    size: 32pt,
+  )
+  #v(7mm)
+  #specimen(
+    theme,
+    "Montserrat",
+    [Body and product communication],
+    [Freedom and control for electronic signing],
+    size: 19pt,
   )
   #v(8mm)
 
@@ -185,20 +194,13 @@
   Clear space keeps the mark visually independent from text, borders, and other marks.
 
   #v(7mm)
-  #block(
-    width: 100%,
-    inset: 12mm,
-    fill: white,
-    stroke: (paint: theme.neutral, thickness: 0.7pt, dash: "dashed"),
-  )[
-    #align(center)[
-      #image("../source/artwork/libresign-logo.svg", width: 68%, alt: "LibreSign logo inside its clear-space field")
-    ]
-  ]
-  #v(4mm)
-  #align(center)[
-    #text(size: 9pt, fill: theme.neutral)[Use the reference unit *E* around the full perimeter of the mark.]
-  ]
+  #clear-space-diagram(
+    theme,
+    "../source/artwork/libresign-logo.svg",
+    "LibreSign clear-space construction",
+    [E],
+    [*E* is the height of the capital E in the LibreSign wordmark. Keep at least one E of clear space above, below, to the left, and to the right of the official mark.],
+  )
 ]
 
 #manual-page(theme, [Visual system], [Minimum size])[
@@ -264,25 +266,6 @@
 
   Use the primary artwork on light fields and the reversed artwork on dark or saturated fields. Always verify contrast and clear space.
 ]
-, [Application])[
-  #grid(
-    columns: (1fr, 1fr),
-    gutter: 7mm,
-    block(fill: white, inset: 10mm, height: 64mm)[
-      #align(center + horizon)[
-        #image("../source/artwork/libresign-logo.svg", width: 78%, alt: "LibreSign logo on a light background")
-      ]
-    ],
-    block(fill: theme.soft, inset: 10mm, height: 64mm)[
-      #align(center + horizon)[
-        #image("../source/artwork/libresign-logo.svg", width: 78%, alt: "LibreSign logo on a light green background")
-      ]
-    ],
-  )
-  #v(7mm)
-
-  Before publishing a new application, verify contrast, clear space, and fidelity to the canonical master.
-]
 
 #manual-page(theme, [Usage], [Accessibility])[
   - ensure appropriate contrast for the intended role;
@@ -324,5 +307,6 @@
   theme,
   "../source/artwork/libresign-logo-reversed.svg",
   "Official LibreSign logo",
+  "https://libresign.coop/brand",
   [libresign.coop/brand],
 )
