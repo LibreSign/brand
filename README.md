@@ -9,7 +9,7 @@ Canonical, version-controlled source for the current LibreSign brand system.
 
 Public guide: https://libresign.coop/brand
 
-Latest released manual: https://github.com/LibreSign/brand/releases/latest/download/libresign-brand-manual.pdf
+Latest released manual: https://github.com/LibreSign/brand/releases/download/latest/libresign-brand-manual.pdf
 
 ## Contract
 
