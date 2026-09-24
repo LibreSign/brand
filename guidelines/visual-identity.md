@@ -21,11 +21,11 @@ The artwork itself defines the colors of the official mark. Do not recolor the l
 
 ## Clear space
 
-The canonical clear-space module is **E**.
+The canonical clear-space module is the capital **E** from the LibreSign wordmark.
 
-**E is the height of the capital E in the LibreSign wordmark.** Keep at least one E above, below, to the left, and to the right of the complete official mark.
+The unit is the **height of that E**. Keep one E of clear space above, below, to the left, and to the right of the complete official mark.
 
-Use the canonical artwork and the manual construction diagram rather than estimating the exclusion zone by eye.
+The manual diagram is generated from the canonical artwork geometry and the E reference crop defined in `source/artwork/brand-assets.json`. Do not estimate the exclusion zone by eye.
 
 ## Minimum size
 
