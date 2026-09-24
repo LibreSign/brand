@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: CC-BY-SA-4.0
 
 #import "theme.typ": theme
-#import "components.typ": cover, toc-page, section-page, manual-page, logo-stage, swatch, specimen, clear-space-diagram, rule-pair, statement, back-cover
+#import "components.typ": cover, toc-page, section-page, manual-page, logo-stage, swatch, specimen, clear-space-glyph, clear-space-x, rule-pair, statement, back-cover
 
 #set document(
   title: "LibreSign Brand Manual",
@@ -23,7 +23,7 @@
   theme,
   [LibreSign Brand Manual],
   [Freedom and control for electronic signing],
-  "../source/artwork/libresign-logo-reversed.svg",
+  "../build/assets/libresign-logo-reversed.svg",
   "Official reversed LibreSign logo",
 )
 
@@ -93,7 +93,7 @@
 )
 
 #manual-page(theme, [Logo], [Primary mark])[
-  #logo-stage(theme, "../source/artwork/libresign-logo.svg", "Official LibreSign logo")
+  #logo-stage(theme, "../build/assets/libresign-logo-primary.svg", "Official LibreSign logo")
   #v(8mm)
 
   The canonical master is `source/artwork/libresign-logo.svg`.
@@ -107,7 +107,7 @@
     gutter: 10mm,
     block(fill: white, inset: 10mm, height: 78mm)[
       #align(center + horizon)[
-        #image("../source/artwork/libresign-logo.svg", width: 84%, alt: "Official LibreSign logo composition")
+        #image("../build/assets/libresign-logo-primary.svg", width: 84%, alt: "Official LibreSign logo composition")
       ]
     ],
     [
@@ -194,12 +194,15 @@
   Clear space keeps the mark visually independent from text, borders, and other marks.
 
   #v(7mm)
-  #clear-space-diagram(
+  #clear-space-glyph(
     theme,
-    "../source/artwork/libresign-logo.svg",
-    "LibreSign clear-space construction",
-    [E],
-    [*E* is the height of the capital E in the LibreSign wordmark. Keep at least one E of clear space above, below, to the left, and to the right of the official mark.],
+    "../build/assets/libresign-logo-primary.svg",
+    "LibreSign logo inside the non-interference area",
+    "../build/assets/libresign-reference-e.svg",
+    "Capital E from the LibreSign wordmark used as the clear-space unit",
+    92mm,
+    0.145456,
+    [The clear-space unit is the height of the capital *E* from the LibreSign wordmark. Keep one E above, below, left, and right of the mark.],
   )
 ]
 
@@ -212,14 +215,14 @@
     gutter: 12mm,
     [
       #align(center)[
-        #image("../source/artwork/libresign-logo.svg", width: 40mm, alt: "LibreSign complete logo")
+        #image("../build/assets/libresign-logo-primary.svg", width: 40mm, alt: "LibreSign complete logo")
       ]
       #v(4mm)
       #align(center)[*Complete logo* \ 7 mm / 26 px minimum]
     ],
     [
       #align(center)[
-        #image("../source/artwork/libresign-logo.svg", width: 26mm, alt: "LibreSign logo shown at small scale")
+        #image("../build/assets/libresign-logo-primary.svg", width: 26mm, alt: "LibreSign logo shown at small scale")
       ]
       #v(4mm)
       #align(center)[*Small-format use* \ prefer a dedicated icon asset]
@@ -243,22 +246,22 @@
     gutter: 7mm,
     block(fill: white, inset: 8mm, height: 58mm)[
       #align(center + horizon)[
-        #image("../source/artwork/libresign-logo.svg", width: 78%, alt: "Primary LibreSign logo on white")
+        #image("../build/assets/libresign-logo-primary.svg", width: 78%, alt: "Primary LibreSign logo on white")
       ]
     ],
     block(fill: theme.soft, inset: 8mm, height: 58mm)[
       #align(center + horizon)[
-        #image("../source/artwork/libresign-logo.svg", width: 78%, alt: "Primary LibreSign logo on a light green field")
+        #image("../build/assets/libresign-logo-primary.svg", width: 78%, alt: "Primary LibreSign logo on a light green field")
       ]
     ],
     block(fill: theme.ink, inset: 8mm, height: 58mm)[
       #align(center + horizon)[
-        #image("../source/artwork/libresign-logo-reversed.svg", width: 78%, alt: "Reversed LibreSign logo on a dark neutral field")
+        #image("../build/assets/libresign-logo-reversed.svg", width: 78%, alt: "Reversed LibreSign logo on a dark neutral field")
       ]
     ],
     block(fill: theme.accent, inset: 8mm, height: 58mm)[
       #align(center + horizon)[
-        #image("../source/artwork/libresign-logo-reversed.svg", width: 78%, alt: "Reversed LibreSign logo on the primary teal field")
+        #image("../build/assets/libresign-logo-reversed.svg", width: 78%, alt: "Reversed LibreSign logo on the primary teal field")
       ]
     ],
   )
@@ -305,7 +308,7 @@
 
 #back-cover(
   theme,
-  "../source/artwork/libresign-logo-reversed.svg",
+  "../build/assets/libresign-logo-reversed.svg",
   "Official LibreSign logo",
   "https://libresign.coop/brand",
   [libresign.coop/brand],
