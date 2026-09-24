@@ -26,7 +26,7 @@ jobs:
       - name: Build release artifacts
         run: |
           mkdir -p build
-          typst compile --pdf-standard ua-1 manual/main.typ build/libresign-brand-manual.pdf
+          typst compile --root . --pdf-standard ua-1 manual/main.typ build/libresign-brand-manual.pdf
           rsvg-convert -w 1024 -f png -o build/libresign-logo.png source/artwork/libresign-logo.svg
           rsvg-convert -f pdf -o build/libresign-logo.pdf source/artwork/libresign-logo.svg
           cp source/artwork/libresign-logo.svg build/libresign-logo.svg
