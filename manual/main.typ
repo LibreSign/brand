@@ -96,7 +96,7 @@
   #logo-stage(theme, "../build/assets/libresign-logo-primary.svg", "Official LibreSign logo")
   #v(8mm)
 
-  The canonical master is `source/artwork/libresign-logo.svg`.
+  The canonical master is `source/artwork/libresign-master.svg`.
 
   The versioned vector file is the source of truth for public derivatives and official applications.
 ]
