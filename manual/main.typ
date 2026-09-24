@@ -61,9 +61,9 @@ Stable unless deliberately redesigned:
 
 The 2021 manual documents:
 
-- gray #49494a;
-- green #2b936b;
-- supporting dark teal #184c4e;
+- gray \#49494a;
+- green \#2b936b;
+- supporting dark teal \#184c4e;
 - Catamaran typography.
 
 These values remain authoritative for interpreting legacy artwork.
@@ -72,7 +72,7 @@ These values remain authoritative for interpreting legacy artwork.
 
 The current website uses:
 
-- primary digital color #184c4e;
+- primary digital color \#184c4e;
 - Montserrat as primary UI typeface;
 - additional hover, surface, focus, semantic, and accessibility tokens.
 
@@ -82,21 +82,21 @@ This is the current web/UI layer. It does not retroactively rewrite legacy logo 
 
 Historical primary identity colors:
 
-- gray: #49494a;
-- green: #2b936b.
+- gray: \#49494a;
+- green: \#2b936b.
 
 Historical supporting colors include:
 
-- #f5f5f5;
-- #c2ccc8;
-- #184c4e;
-- #cafbc4;
-- #e8f7e7;
-- #f17b64.
+- \#f5f5f5;
+- \#c2ccc8;
+- \#184c4e;
+- \#cafbc4;
+- \#e8f7e7;
+- \#f17b64.
 
 Current primary digital color:
 
-- #184c4e.
+- \#184c4e.
 
 The website defines additional semantic colors for hover, focus, success, warning, and error states. Those are interface tokens rather than logo colors.
 
