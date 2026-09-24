@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "slug": "libresign",
+  "master": "source/artwork/libresign-master.svg",
+  "normalization": {
+    "engine": "inkscape",
+    "crop": "drawing",
+    "padding_ratio": 0.0125
+  },
+  "variants": {
+    "primary": {
+      "colors": {}
+    },
+    "reversed": {
+      "colors": {
+        "#2a936a": "#ffffff",
+        "#707172": "#ffffff",
+        "#717273": "#ffffff"
+      }
+    },
+    "monochrome": {
+      "colors": {
+        "#2a936a": "#000000",
+        "#707172": "#000000",
+        "#717273": "#000000"
+      }
+    }
+  },
+  "clear_space": {
+    "unit_ratio_to_logo_width": 0.145456,
+    "marker": {
+      "variant": "primary",
+      "fraction": [
+        0.89667199,
+        0.1886665,
+        0.10332801,
+        0.33249613
+      ],
+      "filename": "libresign-reference-e.svg"
+    }
+  },
+  "exports": {
+    "png_widths": [
+      256,
+      512,
+      1024,
+      2048
+    ]
+  }
+}
