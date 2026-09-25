@@ -16,7 +16,7 @@
   [LibreSign Brand Manual],
   [Freedom and control for electronic signing],
   "../build/assets/libresign-logo-reversed.svg",
-  "Official reversed LibreSign logo",
+  "Official white LibreSign logo",
 )
 
 #toc-page(
@@ -254,12 +254,12 @@
     ],
     block(fill: theme.ink, inset: 7mm, height: 44mm)[
       #align(center + horizon)[
-        #image("../build/assets/libresign-logo-reversed.svg", width: 82%, alt: "Reversed white LibreSign logo")
+        #image("../build/assets/libresign-logo-reversed.svg", width: 82%, alt: "White LibreSign logo for dark backgrounds")
       ]
     ],
     block(fill: white, inset: 7mm, height: 44mm)[
       #align(center + horizon)[
-        #image("../build/assets/libresign-logo-monochrome.svg", width: 82%, alt: "Monochrome black LibreSign logo")
+        #image("../build/assets/libresign-logo-monochrome.svg", width: 82%, alt: "Black one-color LibreSign logo")
       ]
     ],
     [
@@ -334,11 +334,11 @@
   The official logo has its own colors. Do not rebuild or recolor it using product interface colors; use the official vector artwork.
 
   #v(6mm)
-  #swatch("Mark Green", "#2a936a", note: "RGB 42, 147, 106 — embedded in the canonical SVG")
+  #swatch("Mark Green", "#2a936a", note: "RGB 42, 147, 106 — embedded in the official SVG")
   #v(5mm)
-  #swatch("LibreSign name Gray", "#707172", note: "RGB 112, 113, 114 — embedded in the canonical SVG")
+  #swatch("LibreSign name Gray", "#707172", note: "RGB 112, 113, 114 — embedded in the official SVG")
   #v(5mm)
-  #swatch("Secondary Artwork Gray", "#717273", note: "RGB 113, 114, 115 — preserved in the canonical SVG")
+  #swatch("Secondary Artwork Gray", "#717273", note: "RGB 113, 114, 115 — preserved in the official SVG")
   #v(7mm)
 
   These values document the current digital artwork; they are not instructions to redraw the mark.
@@ -390,7 +390,7 @@
 
   Headings should remain clearly distinct from body copy, while body text must prioritize legibility at the target size and medium.
 
-  If Montserrat is unavailable in a constrained environment, use a documented sans-serif fallback rather than substituting a visually decorative font.
+  If Montserrat is unavailable because a tool or platform has limited font options, use a documented sans-serif fallback instead of a decorative font.
 
   The font is distributed in the repository under SIL Open Font License 1.1 and is used directly by the manual build.
 ]
@@ -403,7 +403,7 @@
     theme,
     "../build/assets/libresign-clear-space-diagram.svg",
     "LibreSign clear-space construction with the final E in LIBRE highlighted and four reference E glyphs touching the mark",
-    [The clear-space module is the capital *E* from the LibreSign wordmark. The highlighted E identifies the source glyph. Each gray E spans one full clear-space unit from an actual edge of the mark to the dashed outer exclusion boundary.],
+    [The clear-space unit is the capital *E* from the LibreSign name inside the logo. The highlighted E shows which letter is used. Each gray E measures one full unit from the edge of the logo to the dashed outer boundary.],
   )
 ]
 
@@ -431,7 +431,7 @@
   )
   #v(8mm)
 
-  Never reduce the complete wordmark beyond legibility. If the available space is too small, use the written name *LibreSign* or another approved treatment rather than cropping the mark. A standalone icon may be used only after an official icon asset is published.
+  Never make the complete logo so small that the LibreSign name becomes hard to read. If the available space is too small, use the written name *LibreSign* or another approved treatment rather than cropping the mark. A standalone icon may be used only after an official icon asset is published.
 ]
 
 #section-page(
@@ -458,18 +458,18 @@
     ],
     block(fill: theme.ink, inset: 8mm, height: 58mm)[
       #align(center + horizon)[
-        #image("../build/assets/libresign-logo-reversed.svg", width: 78%, alt: "Reversed LibreSign logo on a dark neutral field")
+        #image("../build/assets/libresign-logo-reversed.svg", width: 78%, alt: "White LibreSign logo on a dark neutral background")
       ]
     ],
     block(fill: theme.accent, inset: 8mm, height: 58mm)[
       #align(center + horizon)[
-        #image("../build/assets/libresign-logo-reversed.svg", width: 78%, alt: "Reversed LibreSign logo on the primary teal field")
+        #image("../build/assets/libresign-logo-reversed.svg", width: 78%, alt: "White LibreSign logo on the primary teal background")
       ]
     ],
   )
   #v(7mm)
 
-  Use the primary artwork on light fields and the reversed artwork on dark or saturated fields. Always verify contrast and clear space.
+  Use the primary logo on light backgrounds and the white logo on dark or strong-color backgrounds. Always verify contrast and clear space.
 ]
 
 #manual-page(theme, [Usage], [Use with partners and third parties])[
@@ -505,7 +505,7 @@
         #image("../build/assets/libresign-logo-primary.svg", width: 72%, alt: "Correct unmodified LibreSign logo on white")
       ]
       #v(4mm)
-      Use the canonical artwork at its original proportions and preserve clear space.
+      Use the official artwork at its original proportions and preserve clear space.
     ],
     [DON'T ROTATE],
     [
@@ -589,7 +589,7 @@
   The free-software license gives broad rights to use and modify the software. It does not automatically give permission to present a modified product or third-party service as the official LibreSign project. Trademark and credit rules are separate.
 ]
 
-#manual-page(theme, [Rules and ownership], [Licensing and canonical source])[
+#manual-page(theme, [Rules and ownership], [Licensing and official sources])[
   - documentation and official artwork: *CC BY-SA 4.0*;
   - automation: *AGPL-3.0-or-later*;
   - fonts: *SIL Open Font License 1.1*;
