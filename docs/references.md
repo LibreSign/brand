@@ -9,6 +9,27 @@ This repository's architecture and governance were reviewed against current bran
 
 ## Brand systems and visual identity
 
+## Brand manual literature and practice
+
+- Wheeler, Alina; Meyerson, Rob. **Designing Brand Identity: A Comprehensive Guide to the World of Brands and Branding**, 6th ed. Wiley, 2024.
+  - https://www.wiley.com/en-us/Designing+Brand+Identity%3A+A+Comprehensive+Guide+to+the+World+of+Brands+and+Branding%2C+6th+Edition-p-9781119984818
+  - Relevant structure: identity systems are treated as more than a logo, including look and feel, color, typography, iconography, trial applications, content strategy, asset management, guidelines, and brand books.
+
+- GitLab Brand Guidelines / Pajamas Design System:
+  - https://design.gitlab.com/brand-introduction/
+  - https://design.gitlab.com/get-started/brand-assets/
+  - Relevant practice: guidelines identify their audience and combine logo, colors, typography, voice, usage guidance, official assets, and trademark context.
+
+- IBM Design Language:
+  - https://www.ibm.com/design/language/ibm-logos/8-bar/
+  - https://www.ibm.com/design/language/color/
+  - Relevant practice: logo construction, approved variants, clear space, scale, color specifications, background use, and explicit misuse guidance are documented separately from broader interface color systems.
+
+- W3C Web Content Accessibility Guidelines (WCAG) 2.2:
+  - https://www.w3.org/TR/WCAG22/
+  - Relevant practice: normal text uses a 4.5:1 minimum contrast target, large text 3:1, and meaningful non-text UI graphics commonly require 3:1; logotypes are explicitly exempt from the text-contrast requirement, while surrounding content is not.
+
+
 - Ribeiro, Rogério; Raposo, Daniel; Almendra, Rita; Neves, João Vasco. **Design Systems Applied to Visual Identities** (2026). Open-access record: https://hdl.handle.net/10400.11/10973
   - Relevant finding: contemporary design systems can evolve into Brand Visual Language Systems that connect directives, reusable modules, digital assets, and operational workflows.
 
