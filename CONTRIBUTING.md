@@ -28,7 +28,7 @@ Do not commit personal identifiers, private contact information, addresses, sign
 
 ## Developer Certificate of Origin
 
-Every commit must carry a DCO sign-off trailer matching the commit author's name and email.
+Every commit must carry a valid DCO sign-off trailer. For normal contributor commits, use the same identity configured as the Git commit author.
 
 Use:
 
@@ -42,4 +42,4 @@ which adds a trailer in this form:
 Signed-off-by: Your Name <you@example.org>
 ```
 
-By signing off, the contributor certifies the contribution under the Developer Certificate of Origin. Pull requests are checked automatically and commits without a matching sign-off must be corrected before merge.
+By signing off, the contributor certifies the contribution under the Developer Certificate of Origin. Pull requests are checked by the repository's DCO GitHub App, which understands GitHub-generated commits such as Dependabot updates while still requiring a valid sign-off.
