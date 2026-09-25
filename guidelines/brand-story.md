@@ -23,6 +23,10 @@ That value can be expressed through concrete product benefits:
 
 ## Brand promise
 
+**Freedom and control for electronic signing.**
+
+This line is the current brand promise and messaging descriptor. It may be used in editorial and campaign contexts, but it is not part of the logo artwork and must not be attached to the logo as an unofficial lockup.
+
 Electronic signing infrastructure should strengthen autonomy rather than create unnecessary dependency.
 
 The brand should consistently connect four ideas:
@@ -58,3 +62,11 @@ A LibreSign communication should feel:
 - practical rather than ideological for its own sake;
 - independent rather than tied to one mandatory provider;
 - confident without making unverifiable claims.
+
+## Audience and positioning
+
+LibreSign is positioned as a free-software electronic-signing platform for organizations that value autonomy, verifiability, interoperability, and continuity.
+
+The primary audience includes organizations that operate their own infrastructure, require deployment choice, integrate signing into existing workflows, or need inspectable and adaptable software.
+
+Contributors, integrators, service providers, public institutions, researchers, and free-software communities are important secondary audiences. Communication should welcome different levels of technical expertise and lead with the practical benefit before implementation detail.

@@ -16,12 +16,15 @@ The LibreCode and LibreSign manuals share the same editorial architecture.
    - official name
    - meaning of Libre
    - brand promise and principles
+   - audience and positioning
    - free-software culture
    - stewardship/community context
    - pronunciation
    - voice and tone
+   - messaging hierarchy
 4. Logo
    - canonical artwork
+   - approved variants and formats
    - composition
 5. Visual system
    - colors
@@ -29,9 +32,10 @@ The LibreCode and LibreSign manuals share the same editorial architecture.
    - clear space
    - minimum size
 6. Usage
+   - background/application guidance
+   - partner/community/third-party use
    - correct use
    - incorrect use
-   - background/application guidance
 7. Accessibility
 8. Project/organization relationship, licensing, trademark, and canonical source
 9. Back cover
@@ -70,3 +74,9 @@ Content lives in `manual/main.typ`.
 Third-party Typst packages may be added only when they provide a concrete capability that is materially better than the standard library, with an exact version and compatible open-source license.
 
 See `docs/decisions/0002-typst-dependencies.md`.
+
+## Scope discipline
+
+Do not invent a visual subsystem merely to make a manual look comprehensive. Photography, illustration, iconography, motion, social templates, campaign systems, sub-brands, or standalone logo marks become normative only when the project has approved source assets and repeatable rules for them.
+
+When a subsystem is not defined, say so explicitly and keep experimental creative work outside the canonical brand contract until it is reviewed and versioned.
