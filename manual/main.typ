@@ -72,7 +72,7 @@
 
   #v(6mm)
   #statement(theme, [
-    Use the official files and rules in this repository. Do not recreate the brand from screenshots, old exports, or memory.
+    Use the official LibreSign files and the rules in this manual. Do not recreate the brand from screenshots, old exports, or memory.
   ])
   #v(5mm)
 
@@ -266,9 +266,7 @@
   #logo-stage(theme, "../build/assets/libresign-logo-primary.svg", "Official LibreSign logo")
   #v(8mm)
 
-  The official master file is `source/artwork/libresign-master.svg`.
-
-  This versioned vector file is the official source for exported files and public use.
+  Use the official vector artwork published by LibreSign. Do not redraw the logo or derive a new "master" from an exported image.
 ]
 
 #manual-page(theme, [Logo], [Approved logo versions and formats])[
@@ -425,7 +423,7 @@
 
   If Montserrat is unavailable because a tool or platform has limited font options, use a documented sans-serif fallback instead of a decorative font.
 
-  The font is distributed in the repository under SIL Open Font License 1.1 and is used directly by the manual build.
+  Montserrat is distributed under SIL Open Font License 1.1.
 ]
 
 #manual-page(theme, [Visual system], [Clear space])[
@@ -536,7 +534,7 @@
   ])
 
   #v(5mm)
-  See `TRADEMARKS.md` for the legal-use policy. This page explains how to present these relationships. It does not replace the trademark policy.
+  The trademark policy governs legal use of the LibreSign name and marks. This page explains only how to present these relationships visually and editorially.
 ]
 
 #manual-page(theme, [Usage], [Correct and incorrect use])[
@@ -654,18 +652,18 @@
   - documentation and official artwork: *CC BY-SA 4.0*;
   - automation: *AGPL-3.0-or-later*;
   - fonts: *SIL Open Font License 1.1*;
-  - trademark: separate rules in `TRADEMARKS.md`.
+  - trademark: separate from the copyright licenses above.
 
   #v(8mm)
-  Official source files and editable brand rules:
-
-  https://github.com/LibreSign/brand
-
-  Public brand guide and current download entry point:
+  Public brand guide and current downloads:
 
   https://libresign.coop/brand
 
-  Use released or automatically generated assets from the official repository. Do not treat screenshots, copied files, slide decks, or search results as official brand sources.
+  Public source files:
+
+  https://github.com/LibreSign/brand
+
+  Use official published assets. Do not treat screenshots, copied files, slide decks, or search results as official brand sources.
 ]
 
 #back-cover(
