@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: CC-BY-SA-4.0
 
 #import "theme.typ": theme
-#import "components.typ": cover, toc-page, section-page, manual-page, logo-stage, swatch, specimen, clear-space-glyph, clear-space-x, rule-pair, statement, back-cover
+#import "components.typ": cover, toc-page, section-page, manual-page, logo-stage, swatch, specimen, libresign-clear-space, librecode-clear-space, rule-pair, statement, back-cover
 
 #set document(
   title: "LibreSign Brand Manual",
@@ -194,7 +194,7 @@
   Clear space keeps the mark visually independent from text, borders, and other marks.
 
   #v(7mm)
-  #clear-space-glyph(
+  #libresign-clear-space(
     theme,
     "../build/assets/libresign-logo-primary.svg",
     "LibreSign logo inside the non-interference area",
@@ -202,7 +202,7 @@
     "Capital E from the LibreSign wordmark used as the clear-space unit",
     92mm,
     0.145456,
-    [The clear-space unit is the height of the capital *E* from the LibreSign wordmark. Keep one E above, below, left, and right of the mark.],
+    [The clear-space module is the capital *E* from the LibreSign wordmark. The E is centered on each side of the dashed exclusion boundary, matching the original construction logic.],
   )
 ]
 
