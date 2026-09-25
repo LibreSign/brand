@@ -36,7 +36,12 @@
         0.10332801,
         0.33249613
       ],
-      "filename": "libresign-reference-e.svg"
+      "filename": "libresign-reference-e.svg",
+      "colors": {
+        "#2a936a": "#c2ccc8",
+        "#707172": "#c2ccc8",
+        "#717273": "#c2ccc8"
+      }
     }
   },
   "exports": {
