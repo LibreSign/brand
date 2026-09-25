@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: CC-BY-SA-4.0
 
 #import "theme.typ": theme
-#import "components.typ": cover, toc-page, section-page, manual-page, logo-stage, swatch, specimen, libresign-clear-space, librecode-clear-space, rule-pair, statement, back-cover
+#import "components.typ": cover, toc-page, section-page, manual-page, logo-stage, swatch, specimen, libresign-clear-space, rule-pair, statement, back-cover
 
 #set document(
   title: "LibreSign Brand Manual",
