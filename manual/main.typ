@@ -587,6 +587,9 @@
 
   #v(6mm)
   The free-software license gives broad rights to use and modify the software. It does not automatically give permission to present a modified product or third-party service as the official LibreSign project. Trademark and credit rules are separate.
+
+  #v(6mm)
+  LibreSign is a registered trademark in Brazil under INPI process *923392807*, Nice class *42*. Trademark rights are separate from the copyright licenses that apply to the documentation, artwork, and software.
 ]
 
 #manual-page(theme, [Rules and ownership], [Licensing and official sources])[
