@@ -34,7 +34,10 @@ The same asset generator is used by local builds, CI, the continuous `latest` re
 ## Typst source quality
 
 Keep Typst code formatted with [Typstyle](https://github.com/typstyle-rs/typstyle).
-The project uses Typstyle 0.15.1, matching the Typst 0.15.1 syntax generation used by the manual.
+
+CI runs Typstyle through the versioned `typstyle-rs/typstyle-action` GitHub Action. The action reference is pinned to an immutable commit SHA and is updated by Dependabot together with the other GitHub Actions dependencies.
+
+The Typst compiler itself is different: the manual build intentionally pins an exact compiler version. Dependabot updates GitHub Action references, but it does not update arbitrary action inputs such as `typst-version`. Keeping the compiler exact is deliberate so the same source commit can be rebuilt with the same Typst release instead of silently changing PDF output when a new compiler is published.
 
 Check formatting locally:
 
