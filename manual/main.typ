@@ -23,10 +23,10 @@
   theme,
   [Brand system],
   (
-    ("01", "Foundations", "Purpose, freedom, culture, stewardship, pronunciation, and voice", "section-foundations"),
-    ("02", "Logo", "Canonical artwork and composition", "section-logo"),
+    ("01", "Foundations", "Purpose, positioning, freedom, culture, messaging, and voice", "section-foundations"),
+    ("02", "Logo", "Canonical artwork, approved variants, composition, and integrity", "section-logo"),
     ("03", "Visual system", "Logo color, digital palette, typography, clear space, and scale", "section-visual-system"),
-    ("04", "Usage", "Correct use, misuse, backgrounds, and accessibility", "section-usage"),
+    ("04", "Usage", "Applications, co-branding, misuse, and accessibility", "section-usage"),
     ("05", "Governance", "Licensing, trademark, and canonical source", "section-governance"),
   ),
 )
@@ -48,7 +48,9 @@
   ])
   #v(5mm)
 
-  The manual defines the current name, logo, color, typography, voice, clear space, minimum size, usage, accessibility, and governance rules.
+  The manual defines the current name, positioning, logo, approved variants, color, typography, voice, messaging, clear space, minimum size, usage, accessibility, and governance rules.
+
+  This version intentionally does not define a canonical photography, illustration, motion, or campaign-template system. Supporting creative work may evolve, but it must not be presented as an official visual system until it is versioned here.
 
   Product-interface details may evolve in the consuming design system. When a brand treatment conflicts with accessibility, legal requirements, or trademark rules, those requirements take precedence.
 ]
@@ -86,6 +88,26 @@
   - *continuity* — design and communicate for long-term operation, maintainability, and independence from a single provider.
 
   These principles should be visible not only in the software, but also in documentation, support, partnerships, presentations, and product communication.
+]
+
+#manual-page(theme, [Foundations], [Audience and positioning])[
+  LibreSign is for people and organizations that need electronic signing without surrendering control of infrastructure, data, integration, or long-term operation.
+
+  #v(6mm)
+  #statement(theme, [
+    *Positioning:* LibreSign is a free-software electronic-signing platform for organizations that value autonomy, verifiability, interoperability, and continuity.
+  ])
+  #v(5mm)
+
+  Primary audiences include:
+
+  - organizations operating their own infrastructure or requiring deployment choice;
+  - teams integrating electronic signing into existing systems and workflows;
+  - organizations that need inspectable, adaptable software and durable access to their signing infrastructure.
+
+  Secondary audiences include contributors, integrators, service providers, public institutions, researchers, and communities evaluating or extending free-software signing technology.
+
+  The brand should welcome different levels of technical expertise. Explain the benefit before the implementation detail, then provide evidence and technical depth for readers who need it.
 ]
 
 #manual-page(theme, [Foundations], [Free software is part of the identity])[
@@ -183,6 +205,27 @@
   When choosing between spectacle and clarity, choose clarity. When choosing between a proprietary-sounding promise and an inspectable fact, choose the fact.
 ]
 
+#manual-page(theme, [Foundations], [Messaging system])[
+  Use a simple hierarchy so LibreSign communications stay recognizable without repeating identical copy everywhere.
+
+  #v(5mm)
+  #text(font: theme.heading-font, size: 11pt, weight: "bold", fill: theme.accent)[Brand promise]
+  #v(1.5mm)
+  *Freedom and control for electronic signing.*
+
+  #v(5mm)
+  #text(font: theme.heading-font, size: 11pt, weight: "bold", fill: theme.accent)[What makes the promise credible]
+  #v(1.5mm)
+  - free-software source that can be inspected and adapted;
+  - self-hosting and infrastructure choice;
+  - control of documents and operational data;
+  - integration and interoperability;
+  - continuity beyond a single service provider.
+
+  #v(5mm)
+  The promise is a messaging line, not part of the logo artwork. Do not build an unofficial lockup by attaching it to the mark. Adapt supporting copy to the audience and context while keeping claims specific and verifiable.
+]
+
 #section-page(
   theme,
   [02],
@@ -198,6 +241,40 @@
   The canonical master is `source/artwork/libresign-master.svg`.
 
   The versioned vector file is the source of truth for public derivatives and official applications.
+]
+
+#manual-page(theme, [Logo], [Approved variants and formats])[
+  #grid(
+    columns: (1fr, 1fr),
+    gutter: 7mm,
+    block(fill: white, inset: 7mm, height: 44mm)[
+      #align(center + horizon)[
+        #image("../build/assets/libresign-logo-primary.svg", width: 82%, alt: "Primary full-color LibreSign logo")
+      ]
+    ],
+    block(fill: theme.ink, inset: 7mm, height: 44mm)[
+      #align(center + horizon)[
+        #image("../build/assets/libresign-logo-reversed.svg", width: 82%, alt: "Reversed white LibreSign logo")
+      ]
+    ],
+    block(fill: white, inset: 7mm, height: 44mm)[
+      #align(center + horizon)[
+        #image("../build/assets/libresign-logo-monochrome.svg", width: 82%, alt: "Monochrome black LibreSign logo")
+      ]
+    ],
+    [
+      #text(font: theme.heading-font, size: 10.5pt, weight: "bold", fill: theme.ink)[Choose the variant by context]
+      #v(2mm)
+      - *Primary:* default on light, quiet backgrounds.
+      - *Reversed:* dark or saturated backgrounds.
+      - *Monochrome:* one-color production or constrained reproduction.
+    ],
+  )
+  #v(7mm)
+
+  Use *SVG* for scalable digital work, *PNG* for raster workflows such as presentations and social media, and *PDF* for professional print/interchange. Prefer vector files whenever the workflow supports them.
+
+  There is currently no separately published standalone LibreSign icon/logomark in the approved asset set. Do not crop the full logo or extract the signing gesture yourself and present it as an official icon.
 ]
 
 #manual-page(theme, [Logo], [Construction and composition])[
@@ -309,7 +386,9 @@
 
   Montserrat is the current official digital typeface.
 
-  Use weight and size to create hierarchy rather than introducing unrelated typefaces. Headings should remain clearly distinct from body copy, while body text must prioritize legibility at the target size and medium.
+  Use weight and size to create hierarchy rather than introducing unrelated typefaces. A practical default hierarchy is *400* for body copy, *500* for labels and supporting emphasis, *600* for subheads, and *700* for major headings. Use heavier or lighter weights only when the application has a documented reason.
+
+  Headings should remain clearly distinct from body copy, while body text must prioritize legibility at the target size and medium.
 
   If Montserrat is unavailable in a constrained environment, use a documented sans-serif fallback rather than substituting a visually decorative font.
 
@@ -347,12 +426,12 @@
         #image("../build/assets/libresign-logo-primary.svg", width: 26mm, alt: "LibreSign logo shown at small scale")
       ]
       #v(4mm)
-      #align(center)[*Small-format use* \ prefer a dedicated icon asset]
+      #align(center)[*Small-format use* \ do not improvise an icon]
     ],
   )
   #v(8mm)
 
-  Never reduce the complete wordmark beyond legibility.
+  Never reduce the complete wordmark beyond legibility. If the available space is too small, use the written name *LibreSign* or another approved treatment rather than cropping the mark. A standalone icon may be used only after an official icon asset is published.
 ]
 
 #section-page(
@@ -391,6 +470,27 @@
   #v(7mm)
 
   Use the primary artwork on light fields and the reversed artwork on dark or saturated fields. Always verify contrast and clear space.
+]
+
+#manual-page(theme, [Usage], [Partner, community, and third-party use])[
+  LibreSign is used in an ecosystem of contributors, integrators, hosting providers, events, and partner organizations. The visual relationship must make the source of each offering clear.
+
+  #v(5mm)
+  When LibreSign appears beside another identity:
+
+  - keep each logo intact and preserve the clear space required by both brands;
+  - use spacing and layout to show two distinct identities rather than inventing a combined logo;
+  - describe the relationship in text: for example, "integrates with LibreSign", "LibreSign hosting by …", or "community event about LibreSign";
+  - when the material represents an independent provider or product, its own identity should remain clearly distinguishable from the LibreSign project;
+  - never use size, proximity, labels, or composition to imply sponsorship, certification, partnership, or official status that does not exist.
+
+  #v(6mm)
+  #statement(theme, [
+    Compatibility and participation are welcome. Visual ambiguity about who provides, operates, or endorses something is not.
+  ])
+
+  #v(5mm)
+  See `TRADEMARKS.md` for the legal-use policy. This page explains visual and communication behavior; it does not replace the trademark policy.
 ]
 
 #manual-page(theme, [Usage], [Correct and incorrect use])[
@@ -496,13 +596,15 @@
   - trademark: separate rules in `TRADEMARKS.md`.
 
   #v(8mm)
-  Canonical source:
+  Canonical source and editable brand rules:
 
   https://github.com/LibreSign/brand
 
-  Public guide:
+  Public guide and current distribution entry point:
 
   https://libresign.coop/brand
+
+  Use released or CI-generated assets from the canonical repository. Do not treat screenshots, copied files, slide decks, or search-engine results as authoritative brand sources.
 ]
 
 #back-cover(
