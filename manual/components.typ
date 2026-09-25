@@ -169,64 +169,33 @@
 
 #let libresign-clear-space(
   theme,
-  logo,
+  diagram,
   alt,
-  marker,
-  marker-alt,
-  logo-width,
-  unit-ratio,
   note,
 ) = {
-  let unit = logo-width * unit-ratio
-  let outer-width = logo-width + 2 * unit
-
   align(center)[
-    #grid(
-      columns: (18mm, 1fr),
-      gutter: 6mm,
-      align: center + horizon,
-      [
-        #align(center + horizon)[
-          #image(marker, height: 12mm, fit: "contain", alt: marker-alt)
-        ]
-      ],
-      [
-        #text(font: theme.heading-font, size: 9.5pt, weight: "bold", fill: theme.accent)[E = clear-space module]
-        #v(1mm)
-        #text(font: theme.body-font, size: 8.5pt, fill: theme.neutral)[The highlighted E in LIBRE is the source glyph used to construct the exclusion area.]
-      ],
-    )
-    #v(5mm)
+    #text(
+      font: theme.heading-font,
+      size: 9.5pt,
+      weight: "bold",
+      fill: theme.accent,
+    )[E = clear-space module]
+    #v(1.5mm)
+    #text(
+      font: theme.body-font,
+      size: 8.5pt,
+      fill: theme.neutral,
+    )[The highlighted E in LIBRE is the source glyph used to construct the exclusion area.]
+    #v(6mm)
 
-    #block(
-      width: outer-width,
-      fill: white,
-      stroke: (paint: rgb("#c2ccc8"), thickness: 0.75pt, dash: "dashed"),
-      inset: 0pt,
-    )[
-      // Each reference E occupies the clear-space band itself. The dashed
-      // rectangle is the outer exclusion boundary, not the marker centerline.
-      #place(top + center)[
-        #image(marker, height: unit, fit: "contain", alt: marker-alt)
-      ]
-      #place(bottom + center)[
-        #image(marker, height: unit, fit: "contain", alt: marker-alt)
-      ]
-      #place(left + horizon)[
-        #rotate(-90deg, image(marker, height: unit, fit: "contain", alt: marker-alt))
-      ]
-      #place(right + horizon)[
-        #rotate(90deg, image(marker, height: unit, fit: "contain", alt: marker-alt))
-      ]
-      #pad(left: unit, right: unit, top: unit, bottom: unit)[
-        #image(logo, width: logo-width, fit: "contain", alt: alt)
-      ]
-    ]
+    // Technical geometry is generated as SVG from the canonical logo.
+    // Typst only scales and places the finished vector diagram.
+    #image(diagram, width: 122mm, fit: "contain", alt: alt)
   ]
 
   v(6mm)
   align(center)[
-    #block(width: 132mm)[
+    #block(width: 128mm)[
       #text(font: theme.body-font, size: 9pt, fill: theme.neutral)[#note]
     ]
   ]
