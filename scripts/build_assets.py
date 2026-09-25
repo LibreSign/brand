@@ -62,6 +62,29 @@ def crop_reference(source: Path, target: Path, fraction: list[float], padding: f
     tree.write(target, encoding="unicode", xml_declaration=True)
 
 
+def build_highlighted_diagram(
+    source: Path,
+    target: Path,
+    attribute: str,
+    value: str,
+    color: str,
+    padding: float,
+) -> None:
+    tree = ET.parse(source)
+    root = tree.getroot()
+    matches = [element for element in root.iter() if element.attrib.get(attribute) == value]
+    if len(matches) != 1:
+        raise ValueError(
+            f"Expected exactly one clear-space highlight element for {attribute}={value!r}, found {len(matches)}"
+        )
+    matches[0].set("fill", color)
+
+    with tempfile.TemporaryDirectory() as tmp:
+        staged = Path(tmp) / "clear-space-diagram.svg"
+        tree.write(staged, encoding="unicode", xml_declaration=True)
+        normalize_svg(staged, target, padding)
+
+
 def export(svg: Path, out_dir: Path, png_widths: list[int]) -> None:
     stem = svg.stem
     run("inkscape", str(svg), "--export-area-page", "--export-type=pdf", f"--export-filename={out_dir / (stem + '.pdf')}")
@@ -104,7 +127,12 @@ def main() -> int:
         marker = spec.get("clear_space", {}).get("marker")
         if marker:
             marker_target = out_dir / marker["filename"]
-            crop_reference(variants[marker["variant"]], marker_target, marker["fraction"])
+            crop_reference(
+                variants[marker["variant"]],
+                marker_target,
+                marker["fraction"],
+                marker.get("padding", 0.025),
+            )
             marker_colors = marker.get("colors", {})
             if marker_colors:
                 marker_target.write_text(
@@ -112,6 +140,20 @@ def main() -> int:
                     encoding="utf-8",
                 )
             export(marker_target, out_dir, [512])
+
+        diagram = spec.get("clear_space", {}).get("diagram")
+        if diagram:
+            highlight = diagram["highlight"]
+            diagram_target = out_dir / diagram["filename"]
+            build_highlighted_diagram(
+                master,
+                diagram_target,
+                highlight["attribute"],
+                highlight["value"],
+                highlight["color"],
+                diagram.get("padding_ratio", 0.0),
+            )
+            export(diagram_target, out_dir, [512, 1024])
 
     primary = variants["primary"]
     for suffix in ("svg", "pdf"):
