@@ -9,12 +9,19 @@ This file records official LibreSign registration identifiers that are useful fo
 
 ## Trademark
 
-LibreSign trademark filing with Brazil's National Institute of Industrial Property (INPI):
+LibreSign trademark registration with Brazil's National Institute of Industrial Property (INPI):
 
-- application number: `923392807`;
-- filing date: 2021-06-25.
+- process: `923392807`;
+- status: registered and in force;
+- presentation: mixed mark;
+- nature: product/service mark;
+- Nice class: `42`;
+- filing date: 2021-06-25;
+- registration granted: 2022-06-28;
+- valid until: 2032-06-28;
+- holder recorded by INPI: `LYSEON TECH COOPERATIVA DE TRABALHO E SOLUÇÕES TECNOLÓGICAS`.
 
-The application/protocol records supplied by the project owner identify the filing made on that date. The current Nice class, legal owner name as recorded by INPI, and current registration/status wording still need to be verified against the current INPI trademark record before they are published here.
+The registration covers services in class 42, including software-related services, data authentication, cloud computing, software development and maintenance, digital/electronic signature services, data encryption, and software as a service.
 
 ## Computer program registration
 
