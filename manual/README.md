@@ -39,13 +39,13 @@ The project uses Typstyle 0.15.1, matching the Typst 0.15.1 syntax generation us
 Check formatting locally:
 
 ```bash
-typstyle --check --line-width 100 manual
+typstyle --check --line-width 120 manual
 ```
 
 Apply formatting:
 
 ```bash
-typstyle --inplace --line-width 100 manual
+typstyle --inplace --line-width 120 manual
 ```
 
 For editor diagnostics, Tinymist is the recommended language server. Enable its Typst linter and use Typstyle as the formatter. Tinymist linting complements the compiler: compilation remains the authoritative check that the complete manual can be evaluated and rendered.
