@@ -11,8 +11,3 @@ updates:
       github-actions:
         patterns:
           - "*"
-
-  - package-ecosystem: "docker"
-    directory: "/.github/verapdf"
-    schedule:
-      interval: "weekly"
