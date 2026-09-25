@@ -25,8 +25,19 @@ Latest released manual: https://github.com/LibreSign/brand/releases/download/lat
 
 - `guidelines/` — normative brand rules.
 - `source/artwork/` — canonical editable artwork.
-- `assets/` — asset distribution policy.
-- `examples/` — usage examples.
+- `assets/` — generated-asset policy and build contract.
 - `manual/` — Typst source.
 - `docs/` — architecture, decisions, and references.
 - `LICENSES/` and `REUSE.toml` — licensing metadata.
+
+## Migration status
+
+The former design-tool/manual workflow has been replaced by this open, version-controlled system.
+
+- editable brand rules are plain text and Typst;
+- the official logo source is SVG;
+- public derivatives are generated reproducibly;
+- the PDF manual is built as PDF/UA-1 and checked in CI;
+- releases are published from the same source tree.
+
+Do not reintroduce a separate proprietary design file as a second source of truth.
