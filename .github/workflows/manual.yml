@@ -34,7 +34,11 @@ jobs:
       - name: Check Typst formatting
         uses: typstyle-rs/typstyle-action@29e8697c27707b43f1dc08d3aba17868e14a1ce2 # v1.0.1
         with:
-          opts: --diff --line-width 120
+          # typstyle-action splits options on newlines, not spaces.
+          opts: |
+            --diff
+            --line-width
+            120
           inputs: manual
       - name: Install asset toolchain
         run: |
