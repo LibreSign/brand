@@ -40,6 +40,12 @@ jobs:
       - name: Build accessible PDF
         run: |
           typst compile --root . --font-path source/fonts --pdf-standard ua-1 manual/main.typ build/brand-manual.pdf
+      - name: Validate PDF/UA-1 with veraPDF
+        run: |
+          docker run --rm \
+            -v "$PWD/build:/data:ro" \
+            verapdf/cli:latest \
+            --flavour ua1 --format text /data/brand-manual.pdf
       - uses: actions/upload-artifact@v6
         with:
           name: brand-manual

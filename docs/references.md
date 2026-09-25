@@ -85,6 +85,41 @@ This repository's architecture and governance were reviewed against current bran
   - https://reuse.software/spec-3.3/
   - Relevant practice: each tracked file should have unambiguous, machine-readable copyright and license information; REUSE.toml is preferred over deprecated DEP5 for directory-level annotations.
 
+## PDF usability and accessibility
+
+- W3C WAI, **Technique G64: Providing a Table of Contents**:
+  - https://www.w3.org/WAI/WCAG22/Techniques/general/G64
+  - Relevant practice: a table of contents should both communicate document organization and link directly to the corresponding sections.
+
+- W3C WAI, **PDF2: Creating bookmarks in PDF documents**:
+  - https://www.w3.org/WAI/WCAG21/Techniques/pdf/PDF2
+  - Relevant practice: long, subdivided PDF documents should provide bookmarks as an additional navigation mechanism, benefiting users with cognitive disabilities and users navigating with assistive technology.
+
+- W3C WAI, **PDF3: Ensuring correct tab and reading order in PDF documents**:
+  - https://www.w3.org/WAI/WCAG21/Techniques/pdf/PDF3
+  - Relevant practice: tagged PDF content and interactive elements must follow a logical reading and focus order.
+
+- W3C WAI, **PDF11 / PDF13: Links in tagged PDF**:
+  - https://www.w3.org/WAI/WCAG21/Techniques/pdf/PDF11
+  - https://www.w3.org/WAI/WCAG21/Techniques/pdf/PDF13
+  - Relevant practice: links must be structurally represented and their purpose must be understandable from link text or context.
+
+- PDF Association, **PDF-UX: Bookmarks**:
+  - https://pdfa.org/pdf-ux-bookmarks/
+  - Relevant practice: bookmarks are a conventional, persistent navigation mechanism independent of the current page and should reflect a useful document hierarchy.
+
+- Typst, **Accessibility Guide**, **Heading**, **Link**, and **PDF** documentation:
+  - https://typst.app/docs/guides/accessibility/
+  - https://typst.app/docs/reference/model/heading/
+  - https://typst.app/docs/reference/model/link/
+  - https://typst.app/docs/reference/pdf/
+  - Relevant practice: preserve semantic title/heading structure, use labelled internal links, provide alternative descriptions, mark decorative artifacts appropriately, and target PDF/UA-1 for the strictest currently supported accessible PDF checks.
+
+- veraPDF, **PDF/UA validation**:
+  - https://docs.verapdf.org/validation/
+  - https://docs.verapdf.org/cli/validation/
+  - Relevant practice: independently validate machine-testable PDF/UA-1 requirements in automated publishing workflows, while retaining manual review for human-only accessibility checks.
+
 ## Reproducible manual publishing
 
 - Typst PDF documentation:

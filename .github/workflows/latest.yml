@@ -44,6 +44,12 @@ jobs:
           cp build/assets/libresign-logo.png build/libresign-logo.png
           cp build/assets/libresign-logo-reversed.svg build/libresign-logo-reversed.svg
           sha256sum build/libresign-brand-manual.pdf build/libresign-logo* > build/SHA256SUMS
+      - name: Validate PDF/UA-1 with veraPDF
+        run: |
+          docker run --rm \
+            -v "$PWD/build:/data:ro" \
+            verapdf/cli:latest \
+            --flavour ua1 --format text /data/libresign-brand-manual.pdf
       - name: Move latest tag to this build
         run: |
           git tag -f latest "$GITHUB_SHA"
