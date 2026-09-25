@@ -53,6 +53,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           if ! gh release view latest >/dev/null 2>&1; then
-            gh release create latest --prerelease --title "Latest brand build" --notes "Continuously updated build from the main branch."
+            gh release create latest --prerelease --title "Latest development build" --notes "Continuously updated development build from the main branch. This is not a versioned release."
           fi
+          gh release edit latest --title "Latest development build" --notes "Continuously updated development build from the main branch. This is not a versioned release." --prerelease
           gh release upload latest             build/libresign-brand-manual.pdf             build/libresign-logo.svg             build/libresign-logo.pdf             build/libresign-logo.png             build/libresign-logo-reversed.svg             build/SHA256SUMS             --clobber
