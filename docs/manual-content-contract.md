@@ -12,9 +12,14 @@ The LibreCode and LibreSign manuals share the same editorial architecture.
 1. Cover
 2. Contents
 3. Foundations
+   - purpose and audience
    - official name
    - meaning of Libre
+   - brand promise and principles
+   - free-software culture
+   - stewardship/community context
    - pronunciation
+   - voice and tone
 4. Logo
    - canonical artwork
    - composition
@@ -28,7 +33,7 @@ The LibreCode and LibreSign manuals share the same editorial architecture.
    - incorrect use
    - background/application guidance
 7. Accessibility
-8. Licensing, trademark, and canonical source
+8. Project/organization relationship, licensing, trademark, and canonical source
 9. Back cover
 
 ## Shared visual grammar
@@ -45,6 +50,8 @@ Both manuals use:
 - the same information hierarchy and page logic.
 
 ## Brand-specific expression
+
+The manuals are not culturally interchangeable. They share an editorial system, but each manual must explain the specific project's purpose, values, stewardship model, community context, and relationship to its legal/organizational home.
 
 The manuals are not visually identical. Each theme controls:
 - core colors;

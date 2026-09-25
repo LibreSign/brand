@@ -33,10 +33,34 @@ This repository's architecture and governance were reviewed against current bran
 - Ribeiro, Rogério; Raposo, Daniel; Almendra, Rita; Neves, João Vasco. **Design Systems Applied to Visual Identities** (2026). Open-access record: https://hdl.handle.net/10400.11/10973
   - Relevant finding: contemporary design systems can evolve into Brand Visual Language Systems that connect directives, reusable modules, digital assets, and operational workflows.
 
-- GitLab Brand Guidelines / Pajamas Design System:
-  - https://design.gitlab.com/brand-introduction/
-  - https://design.gitlab.com/get-started/brand-assets/
-  - Relevant practice: public guidance combines principles, logo, colors, typography, voice, and downloadable assets rather than treating a static PDF as the whole brand system.
+## Free-software project culture and cooperative identity
+
+- GNU Project / Free Software Foundation, **The Free Software Definition**:
+  - https://www.gnu.org/philosophy/free-sw.en.html
+  - Relevant principle: software freedom is defined by the user's freedoms to run, study, modify, share, and share modified versions; the issue is freedom rather than price.
+
+- Debian Project, **Debian Social Contract**:
+  - https://www.debian.org/social_contract
+  - Relevant practice: a free-software project can make its values and commitments explicit as public, durable project documents; commitments include remaining free, giving back to the community, transparency about problems, and prioritizing users and free software.
+
+- Apache Software Foundation, **Apache Product Name Usage Guide** and **Project Branding Best Practices**:
+  - https://apache.org/foundation/marks/guide
+  - https://www.apache.org/foundation/marks/register
+  - Relevant practice: an open-source project brand represents both software and the community/process behind it; clear branding helps newcomers distinguish the project from vendor offerings, gives the community credit, and can encourage contribution.
+
+- GNOME Foundation, **Logo and Trademarks** and project governance material:
+  - https://foundation.gnome.org/trademark-and-logo/
+  - https://handbook.gnome.org/governance.html
+  - Relevant practice: project identity, legal stewardship, community governance, and the distinction between official project artifacts and third-party offerings should be explicit.
+
+- Linux Foundation, **Open Source Communities and Trademarks: A Reprise**:
+  - https://www.linuxfoundation.org/blog/blog/open-source-communities-and-trademarks-a-reprise
+  - Relevant principle: project brands are community assets and trademark stewardship should support clear source identification and open, transparent project governance.
+
+- International Cooperative Alliance, **Statement on the Cooperative Identity** and **Guidance Notes to the Cooperative Principles**:
+  - https://ica.coop/en/cooperatives/cooperative-identity
+  - https://ica.coop/en/media/library/the-guidance-notes-on-the-co-operative-principles
+  - Relevant principle: cooperative identity combines jointly owned, democratically controlled enterprise with values and principles including democratic member control, education, cooperation among cooperatives, and concern for community. LibreSign's manual applies these ideas only to the extent they describe LibreCode Cooperativa's stewardship context; it does not imply that every project contributor is a cooperative member.
 
 ## Free/open-source trademarks
 
@@ -51,10 +75,6 @@ This repository's architecture and governance were reviewed against current bran
 - Mozilla Licensing Policies:
   - https://www.mozilla.org/en-US/foundation/licensing/
   - Relevant practice: openly licensed content can coexist with separately controlled trademarks.
-
-- Nextcloud Trademark Guidelines:
-  - https://nextcloud.com/trademarks/
-  - Relevant practice: community use is encouraged while confusing or misleading use is constrained.
 
 - Open Source Initiative brand and trademark guidelines:
   - https://opensource.org/about/brand-and-trademark-guidelines
@@ -83,5 +103,9 @@ This repository's architecture and governance were reviewed against current bran
 - Brand rules, assets, source, governance, licensing, and publishing workflow belong in the same versioned system.
 - Copyright licensing and trademark permission are documented separately.
 - Accessibility is part of the brand system, not a later website-only concern.
+- A free-software project's brand manual should explain the project culture and stewardship model, not merely visual reproduction rules.
+- The meaning of "Libre" is grounded in software freedom and should be expressed through practical user freedoms rather than price claims.
+- Cooperative values may inform project stewardship and communication, but the manual must distinguish cooperative membership/governance from open project contribution.
+- Official project branding must remain distinguishable from third-party services, integrations, and distributions.
 - PDF is generated from open, text-based source.
 - The initial manual toolchain is Typst because it combines reproducible text source, strong visual layout, open licensing, Tagged PDF, and PDF/UA-1 support.

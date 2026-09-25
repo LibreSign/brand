@@ -31,7 +31,7 @@
   theme,
   [Brand system],
   (
-    ("01", "Foundations", "Purpose, name, meaning, pronunciation, and voice"),
+    ("01", "Foundations", "Purpose, freedom, culture, stewardship, pronunciation, and voice"),
     ("02", "Logo", "Canonical artwork and composition"),
     ("03", "Visual system", "Logo color, digital palette, typography, clear space, and scale"),
     ("04", "Usage", "Correct use, misuse, backgrounds, and accessibility"),
@@ -74,6 +74,66 @@
   For organizations, this connects open source to infrastructure choice, interoperability, continuity, auditability, and reduced dependency on a single proprietary service.
 
   Libre does not simply mean "free of charge".
+]
+
+#manual-page(theme, [Foundations], [What LibreSign stands for])[
+  LibreSign exists so electronic signing infrastructure can strengthen *autonomy* rather than create unnecessary dependency.
+
+  #v(6mm)
+  #statement(theme, [
+    Freedom is practical: understand the system, operate it on your terms, integrate it, adapt it, and preserve continuity over time.
+  ])
+  #v(5mm)
+
+  The brand is built around four principles:
+
+  - *freedom* — users and organizations retain meaningful control over their computing and data;
+  - *trust through verifiability* — communicate what can be inspected, audited, configured, or evidenced instead of asking for blind trust;
+  - *interoperability over lock-in* — favor integration, portability, standards, and infrastructure choice;
+  - *continuity* — design and communicate for long-term operation, maintainability, and independence from a single provider.
+
+  These principles should be visible not only in the software, but also in documentation, support, partnerships, presentations, and product communication.
+]
+
+#manual-page(theme, [Foundations], [Free software is part of the identity])[
+  LibreSign is free software. Its own source code is distributed under *AGPL-3.0-or-later*, and the word *Libre* refers to freedom rather than price.
+
+  #v(5mm)
+  In practical terms, free software protects the user's ability, subject to the license, to:
+
+  - run the software for any purpose;
+  - study how it works and adapt it;
+  - share copies;
+  - share modified versions so others can benefit.
+
+  #v(5mm)
+  #statement(theme, [
+    The brand must never reduce "Libre" to "free of charge". Professional services, paid support, hosting, integration, and sustainable economic activity are compatible with software freedom.
+  ])
+  #v(5mm)
+
+  Communication should make freedom understandable through concrete consequences: source availability, self-hosting, auditability, adaptability, interoperability, and choice.
+]
+
+#manual-page(theme, [Foundations], [Cooperative stewardship and community])[
+  LibreSign is developed and maintained by *LibreCode Cooperativa* together with contributors. The cooperative model is part of the project's cultural context, but LibreSign remains open to participation beyond cooperative membership.
+
+  #v(5mm)
+  Cooperative stewardship should be reflected through:
+
+  - shared responsibility and long-term care for the project;
+  - democratic participation within the cooperative;
+  - education and knowledge sharing;
+  - cooperation with other people, communities, and organizations;
+  - concern for the wider community and the public value created by free software.
+
+  #v(5mm)
+  External contributors do not need to become cooperative members to participate in LibreSign. Contribution happens through the project's public processes, while participation in the cooperative's economic and governance structure follows the cooperative's own rules.
+
+  #v(5mm)
+  #statement(theme, [
+    The brand should feel open enough to invite participation, precise enough to earn trust, and independent enough that no single vendor appears to be the only possible way to use LibreSign.
+  ])
 ]
 
 #manual-page(theme, [Foundations], [Pronunciation])[
@@ -123,6 +183,11 @@
       - vague sovereignty claims without explaining the mechanism.
     ],
   )
+
+  #v(6mm)
+  The tone should make people *want to participate because the project is understandable, useful, credible, and open* — not because the communication exaggerates urgency, exclusivity, or superiority.
+
+  When choosing between spectacle and clarity, choose clarity. When choosing between a proprietary-sounding promise and an inspectable fact, choose the fact.
 ]
 
 #section-page(
@@ -412,6 +477,20 @@
   [Governance],
   [The brand is a public, versioned system: rules, artwork, and manual evolve together.],
 )
+
+#manual-page(theme, [Governance], [Project, cooperative, and brand])[
+  *LibreSign* is the project and product brand. *LibreCode Cooperativa* is the cooperative that develops and maintains the project together with contributors.
+
+  Keep those identities related but distinct:
+
+  - do not replace the LibreSign identity with the LibreCode identity in product contexts;
+  - do not imply that an independent service provider is the official LibreSign project;
+  - describe compatibility, hosting, integration, or support relationships truthfully;
+  - credit contributors and community work without implying legal or organizational relationships that do not exist.
+
+  #v(6mm)
+  Free-software licensing grants broad rights over the software, but those rights do not automatically grant permission to present a modified product or third-party service as the official LibreSign project. Trademark and attribution rules remain separate.
+]
 
 #manual-page(theme, [Governance], [Licensing and canonical source])[
   - documentation and official artwork: *CC BY-SA 4.0*;
