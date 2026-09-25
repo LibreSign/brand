@@ -3,6 +3,10 @@ SPDX-FileCopyrightText: 2026 LibreSign contributors
 SPDX-License-Identifier: CC-BY-SA-4.0
 -->
 
+<p align="center">
+  <img src="source/artwork/libresign-master.svg" alt="LibreSign" width="460">
+</p>
+
 # LibreSign brand
 
 Canonical, version-controlled source for the current LibreSign brand system.
