@@ -14,7 +14,7 @@
   }
 }
 
-#let cover(theme, title, subtitle, logo, alt) = {
+#let cover(theme, document-title, subtitle, logo, alt) = {
   if theme.motif == "nodes" {
     page(margin: 0pt, numbering: none, fill: theme.paper)[
       #motif(theme)
@@ -22,7 +22,7 @@
         #v(1fr)
         #image(logo, width: 88mm, alt: alt)
         #v(14mm)
-        #text(font: theme.heading-font, size: 28pt, weight: "bold", fill: theme.ink)[#title]
+        #text(font: theme.heading-font, size: 28pt, weight: "bold", fill: theme.ink)[#title(document-title)]
         #v(3mm)
         #text(font: theme.body-font, size: 12pt, fill: theme.neutral)[#subtitle]
       ]
@@ -36,7 +36,7 @@
         #align(center)[
           #image(logo, width: 94mm, height: 58mm, fit: "contain", alt: alt)
           #v(18mm)
-          #text(font: theme.heading-font, size: 26pt, weight: "bold", fill: white)[#title]
+          #text(font: theme.heading-font, size: 26pt, weight: "bold", fill: white)[#title(document-title)]
           #v(4mm)
           #text(font: theme.body-font, size: 11.5pt, fill: white)[#subtitle]
         ]
@@ -55,25 +55,30 @@
   #pad(left: 26mm, right: 24mm, top: 26mm, bottom: 24mm)[
     #text(font: theme.heading-font, size: 11pt, weight: "medium", fill: theme.accent)[CONTENTS]
     #v(6mm)
-    #text(font: theme.heading-font, size: 26pt, weight: "bold", fill: theme.ink)[#title]
+    #heading(level: 1, numbering: none, outlined: true, bookmarked: true)[
+      #text(font: theme.heading-font, size: 26pt, weight: "bold", fill: theme.ink)[#title]
+    ] #label("contents")
     #v(16mm)
     #for entry in entries {
-      grid(
-        columns: (15mm, 1fr),
-        gutter: 4mm,
-        text(font: theme.heading-font, size: 16pt, weight: "bold", fill: theme.accent)[#entry.at(0)],
-        [
-          #text(font: theme.heading-font, size: 13pt, weight: "semibold", fill: theme.ink)[#entry.at(1)]
-          #v(1.5mm)
-          #text(font: theme.body-font, size: 9.5pt, fill: theme.neutral)[#entry.at(2)]
-        ],
-      )
+      let dest = label(entry.at(3))
+      link(dest)[
+        #grid(
+          columns: (15mm, 1fr),
+          gutter: 4mm,
+          text(font: theme.heading-font, size: 16pt, weight: "bold", fill: theme.accent)[#entry.at(0)],
+          [
+            #text(font: theme.heading-font, size: 13pt, weight: "semibold", fill: theme.ink)[#entry.at(1)]
+            #v(1.5mm)
+            #text(font: theme.body-font, size: 9.5pt, fill: theme.neutral)[#entry.at(2)]
+          ],
+        )
+      ]
       v(7mm)
     }
   ]
 ]
 
-#let section-page(theme, number, title, subtitle) = page(
+#let section-page(theme, number, title, subtitle, anchor) = page(
   margin: 0pt,
   numbering: none,
   fill: if theme.motif == "nodes" { theme.paper } else { theme.accent },
@@ -81,19 +86,23 @@
   #motif(theme)
   #pad(left: 25mm, right: 24mm, top: 30mm, bottom: 24mm)[
     #v(1fr)
-    #text(
-      font: theme.heading-font,
-      size: 76pt,
-      weight: "bold",
-      fill: if theme.motif == "nodes" { theme.accent } else { white },
-    )[#number]
+    #pdf.artifact[
+      #text(
+        font: theme.heading-font,
+        size: 76pt,
+        weight: "bold",
+        fill: if theme.motif == "nodes" { theme.accent } else { white },
+      )[#number]
+    ]
     #v(7mm)
-    #text(
-      font: theme.heading-font,
-      size: 29pt,
-      weight: "bold",
-      fill: if theme.motif == "nodes" { theme.ink } else { white },
-    )[#title]
+    #heading(level: 1, numbering: none, outlined: true, bookmarked: true)[
+      #text(
+        font: theme.heading-font,
+        size: 29pt,
+        weight: "bold",
+        fill: if theme.motif == "nodes" { theme.ink } else { white },
+      )[#title]
+    ] #label(anchor)
     #v(4mm)
     #block(width: 115mm)[
       #text(
@@ -121,7 +130,9 @@
   #place(left + top, dx: -24mm, dy: -22mm, rect(width: 4mm, height: 100% + 42mm, fill: theme.accent))
   #text(font: theme.heading-font, size: 8.5pt, weight: "medium", fill: theme.accent)[#upper(kicker)]
   #v(4mm)
-  #heading(level: 1, outlined: false, numbering: none)[#title]
+  #heading(level: 2, outlined: true, bookmarked: true, numbering: none)[
+    #text(font: theme.heading-font, size: 24pt, weight: "bold", fill: theme.ink)[#title]
+  ]
   #v(6mm)
   #body
 ]
