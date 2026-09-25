@@ -27,7 +27,7 @@
     }
   },
   "clear_space": {
-    "unit_ratio_to_logo_width": 0.145456,
+    "unit_ratio_to_logo_width": 0.1463414634,
     "marker": {
       "variant": "primary",
       "fraction": [
@@ -41,6 +41,16 @@
         "#2a936a": "#c2ccc8",
         "#707172": "#c2ccc8",
         "#717273": "#c2ccc8"
+      },
+      "padding": 0
+    },
+    "diagram": {
+      "filename": "libresign-clear-space-logo.svg",
+      "padding_ratio": 0,
+      "highlight": {
+        "attribute": "transform",
+        "value": "translate(1176,108)",
+        "color": "#e56655"
       }
     }
   },

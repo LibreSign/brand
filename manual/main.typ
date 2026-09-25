@@ -196,13 +196,13 @@
   #v(7mm)
   #libresign-clear-space(
     theme,
-    "../build/assets/libresign-logo-primary.svg",
-    "LibreSign logo inside the non-interference area",
+    "../build/assets/libresign-clear-space-logo.svg",
+    "LibreSign logo with the final E in LIBRE highlighted as the clear-space reference",
     "../build/assets/libresign-reference-e.svg",
     "Capital E from the LibreSign wordmark used as the clear-space unit",
     92mm,
     0.145456,
-    [The clear-space module is the capital *E* from the LibreSign wordmark. The E is centered on each side of the dashed exclusion boundary, matching the original construction logic.],
+    [The clear-space module is the capital *E* from the LibreSign wordmark. The highlighted E identifies the source glyph. Each gray E occupies the full gap between the mark and the dashed outer exclusion boundary, matching the original construction logic.],
   )
 ]
 
