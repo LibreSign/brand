@@ -26,3 +26,9 @@ The names and official marks of LibreSign may be used truthfully to refer to the
 - use the marks in a deceptive or misleading way.
 
 Questions about uses outside these rules should be directed to the project's public contact channel.
+
+## Registration reference
+
+The LibreSign trademark filing and the separate computer-program registration are documented in [`docs/registrations.md`](docs/registrations.md).
+
+The trademark application number is `923392807`. Do not confuse it with the computer-program registration `BR512021001420-0`; they are separate INPI records with different legal purposes.
