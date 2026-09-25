@@ -31,10 +31,10 @@
   theme,
   [Brand system],
   (
-    ("01", "Foundations", "Name, meaning, and pronunciation"),
+    ("01", "Foundations", "Purpose, name, meaning, pronunciation, and voice"),
     ("02", "Logo", "Canonical artwork and composition"),
-    ("03", "Visual system", "Color, typography, clear space, and scale"),
-    ("04", "Usage", "Applications, consistency, and accessibility"),
+    ("03", "Visual system", "Logo color, digital palette, typography, clear space, and scale"),
+    ("04", "Usage", "Correct use, misuse, backgrounds, and accessibility"),
     ("05", "Governance", "Licensing, trademark, and canonical source"),
   ),
 )
@@ -45,6 +45,20 @@
   [Foundations],
   [The brand starts with its name and the idea of freedom expressed by "Libre".],
 )
+
+#manual-page(theme, [Foundations], [How to use this manual])[
+  This manual is the normative reference for people creating or publishing official LibreSign material, including contributors, partners, service providers, designers, developers, speakers, and documentation authors.
+
+  #v(6mm)
+  #statement(theme, [
+    Use the canonical assets and rules in this repository rather than recreating the identity from screenshots, old exports, or memory.
+  ])
+  #v(5mm)
+
+  The manual defines the current name, logo, color, typography, voice, clear space, minimum size, usage, accessibility, and governance rules.
+
+  Product-interface details may evolve in the consuming design system. When a brand treatment conflicts with accessibility, legal requirements, or trademark rules, those requirements take precedence.
+]
 
 #manual-page(theme, [Foundations], [Official name and meaning])[
   Always write *LibreSign* with uppercase L and S and no space.
@@ -81,6 +95,32 @@
       #v(4mm)
 
       *Sign* keeps its English pronunciation.
+    ],
+  )
+]
+
+#manual-page(theme, [Foundations], [Voice and tone])[
+  LibreSign should sound *trustworthy, technically precise, privacy-aware, and practical*.
+
+  #v(6mm)
+  #grid(
+    columns: (1fr, 1fr),
+    gutter: 8mm,
+    [
+      #text(font: theme.heading-font, size: 11pt, weight: "bold", fill: theme.accent)[Prefer]
+      #v(2mm)
+      - explain control, interoperability, self-hosting, and auditability concretely;
+      - distinguish product capabilities from legal guarantees;
+      - explain security and privacy with evidence and scope;
+      - connect software freedom to operational choice, continuity, and trust.
+    ],
+    [
+      #text(font: theme.heading-font, size: 11pt, weight: "bold", fill: theme.neutral)[Avoid]
+      #v(2mm)
+      - absolute claims such as "100% secure" or "legally valid everywhere";
+      - implying that self-hosting alone guarantees compliance;
+      - hostile comparisons with proprietary competitors;
+      - vague sovereignty claims without explaining the mechanism.
     ],
   )
 ]
@@ -153,18 +193,40 @@
   [Color, typography, and space work together so the brand is recognizable before the words are read.],
 )
 
-#manual-page(theme, [Visual system], [Colors])[
+#manual-page(theme, [Visual system], [Logo colors])[
+  The official mark carries its own color specification. Do not reconstruct or recolor the logo from interface tokens; use the canonical vector artwork.
+
+  #v(6mm)
+  #swatch("Mark Green", "#2a936a", note: "RGB 42, 147, 106 — embedded in the canonical SVG")
+  #v(5mm)
+  #swatch("Wordmark Gray", "#707172", note: "RGB 112, 113, 114 — embedded in the canonical SVG")
+  #v(5mm)
+  #swatch("Secondary Artwork Gray", "#717273", note: "RGB 113, 114, 115 — preserved in the canonical SVG")
+  #v(7mm)
+
+  These values document the current digital artwork; they are not instructions to redraw the mark.
+
+  No canonical Pantone or CMYK palette is currently defined. For professional print, use the official SVG/PDF artwork and a color-managed, proofed conversion appropriate to the production profile rather than publishing guessed print values.
+]
+
+#manual-page(theme, [Visual system], [Digital palette])[
+  The interface palette supports the broader LibreSign digital system and is distinct from the colors embedded in the official mark.
+
+  #v(5mm)
   #swatch("Primary Teal", "#184c4e", note: "Primary brand and interface field")
-  #v(5mm)
+  #v(4mm)
   #swatch("Primary Hover", "#0f3739", note: "Interactive depth")
-  #v(5mm)
+  #v(4mm)
   #swatch("Primary Dark", "#0b5f55", note: "Dark supporting teal")
-  #v(5mm)
+  #v(4mm)
   #swatch("Secondary Cyan", "#00a3be", note: "Secondary digital accent")
-  #v(5mm)
+  #v(4mm)
   #swatch("Light Surface", "#f7fafc", note: "Light background field")
-  #v(5mm)
+  #v(4mm)
   #swatch("Dark Text", "#2d3748", note: "Readable text on light surfaces")
+  #v(6mm)
+
+  Semantic colors for success, warning, focus, and errors belong to the consuming design system and must be validated for accessibility in context.
 ]
 
 #manual-page(theme, [Visual system], [Typography])[
@@ -186,6 +248,10 @@
   #v(8mm)
 
   Montserrat is the current official digital typeface.
+
+  Use weight and size to create hierarchy rather than introducing unrelated typefaces. Headings should remain clearly distinct from body copy, while body text must prioritize legibility at the target size and medium.
+
+  If Montserrat is unavailable in a constrained environment, use a documented sans-serif fallback rather than substituting a visually decorative font.
 
   The font is distributed in the repository under SIL Open Font License 1.1 and is used directly by the manual build.
 ]
@@ -266,14 +332,75 @@
   Use the primary artwork on light fields and the reversed artwork on dark or saturated fields. Always verify contrast and clear space.
 ]
 
-#manual-page(theme, [Usage], [Accessibility])[
-  - ensure appropriate contrast for the intended role;
-  - do not rely on color alone;
-  - preserve logo legibility against backgrounds;
-  - keep textual content selectable and structured;
-  - preserve document language, metadata, links, and reading order.
+#manual-page(theme, [Usage], [Correct and incorrect use])[
+  Brand rules are easier to apply when the intended result and common failures are visible.
 
-  #v(8mm)
+  #v(6mm)
+  #rule-pair(
+    theme,
+    [CORRECT],
+    [
+      #align(center)[
+        #image("../build/assets/libresign-logo-primary.svg", width: 72%, alt: "Correct unmodified LibreSign logo on white")
+      ]
+      #v(4mm)
+      Use the canonical artwork at its original proportions and preserve clear space.
+    ],
+    [DON'T ROTATE],
+    [
+      #align(center)[
+        #rotate(8deg)[
+          #image("../build/assets/libresign-logo-primary.svg", width: 72%, alt: "Incorrect rotated LibreSign logo")
+        ]
+      ]
+      #v(4mm)
+      Do not rotate, skew, distort, or otherwise reinterpret the mark.
+    ],
+  )
+  #v(7mm)
+  #rule-pair(
+    theme,
+    [CORRECT CLEAR SPACE],
+    [
+      #block(fill: white, inset: 8mm)[
+        #align(center)[
+          #image("../build/assets/libresign-logo-primary.svg", width: 72%, alt: "LibreSign logo with generous clear space")
+        ]
+      ]
+      #v(4mm)
+      Keep surrounding text, borders, and partner marks outside the exclusion area.
+    ],
+    [DON'T CROWD],
+    [
+      #block(fill: white, inset: 1mm)[
+        #grid(
+          columns: (1fr, auto),
+          gutter: 1mm,
+          align: center + horizon,
+          image("../build/assets/libresign-logo-primary.svg", width: 100%, alt: "LibreSign logo crowded by nearby text"),
+          text(font: theme.heading-font, size: 9pt, weight: "bold", fill: theme.ink)[PARTNER],
+        )
+      ]
+      #v(4mm)
+      Do not place other content inside the required clear-space zone.
+    ],
+  )
+]
+
+#manual-page(theme, [Usage], [Accessibility])[
+  For digital material, target WCAG 2.2 AA unless a stricter requirement applies.
+
+  - normal text: at least *4.5:1* contrast against its background;
+  - large text: at least *3:1*;
+  - meaningful non-text UI graphics and component boundaries: at least *3:1* where WCAG requires it;
+  - do not rely on color alone to communicate meaning;
+  - keep textual content selectable and structured rather than rasterized;
+  - preserve document language, metadata, links, alternative text, and reading order.
+
+  #v(6mm)
+  Logotypes are exempt from WCAG's text-contrast minimum, but that exception does not extend to surrounding copy, controls, diagrams, or other brand content. Always choose the approved logo variant that remains clearly legible on the intended background.
+
+  #v(7mm)
   #statement(theme, [
     Brand consistency is never a reason to reduce accessibility.
   ])
