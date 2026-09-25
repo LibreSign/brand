@@ -13,6 +13,10 @@ Semantic versioning is used for tagged brand-system releases.
 
 ## Unreleased
 
+No unreleased changes yet.
+
+## 1.0.0 - 2026-09-25
+
 - Canonical brand repository established.
 - SPDX/REUSE compliance enabled.
 - Canonical SVG artwork added.
