@@ -31,6 +31,19 @@ jobs:
       - uses: typst-community/setup-typst@40d32bb6ccb235bd7f5164cb47cfd40a5ea3a314 # v5.2.0
         with:
           typst-version: 0.15.1
+      - name: Install Typstyle
+        env:
+          TYPSTYLE_VERSION: "0.15.1"
+          TYPSTYLE_SHA256: "213c11bc2c64f7237c382b4bb1d06991530ed9d44d3a05204ca3c19615d55b99"
+        run: |
+          curl --fail --location --silent --show-error \
+            "https://github.com/typstyle-rs/typstyle/releases/download/v${TYPSTYLE_VERSION}/typstyle-x86_64-unknown-linux-gnu" \
+            --output /tmp/typstyle
+          echo "${TYPSTYLE_SHA256}  /tmp/typstyle" | sha256sum --check -
+          chmod +x /tmp/typstyle
+          sudo install /tmp/typstyle /usr/local/bin/typstyle
+      - name: Check Typst formatting
+        run: typstyle --check --line-width 100 manual
       - name: Install asset toolchain
         run: |
           sudo apt-get update
