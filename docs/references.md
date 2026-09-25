@@ -33,6 +33,26 @@ This repository's architecture and governance were reviewed against current bran
 - Ribeiro, Rogério; Raposo, Daniel; Almendra, Rita; Neves, João Vasco. **Design Systems Applied to Visual Identities** (2026). Open-access record: https://hdl.handle.net/10400.11/10973
   - Relevant finding: contemporary design systems can evolve into Brand Visual Language Systems that connect directives, reusable modules, digital assets, and operational workflows.
 
+## Additional manual benchmarks
+
+- Ubuntu / Canonical, **Brand Guidelines**:
+  - https://design.ubuntu.com/brand
+  - https://design.ubuntu.com/brand/colour-palette
+  - Relevant practice: connect brand values to visual behavior, explain how the identity should feel across touchpoints, and provide practical asset guidance rather than treating the logo as the whole brand.
+
+- Open Source Security Foundation (OpenSSF), **Brand Guidelines**:
+  - https://openssf.org/about/brand-guidelines/
+  - Relevant practice: combine communication principles, naming, logo variants, clear space, color, typography, presentation assets, and explicit third-party/trademark guidance in one usable system.
+
+- The Linux Foundation, **Brand Guidelines**:
+  - https://www.linuxfoundation.org/brand-guidelines
+  - Relevant practice: distinguish primary/secondary logo variants, explain clear space and background use, and keep project identity clearly separate from independent providers or organizations.
+
+- GitLab Pajamas, **Brand Voice** and **Brand Assets**:
+  - https://design.gitlab.com/brand-messaging/brand-voice/
+  - https://design.gitlab.com/get-started/brand-assets/
+  - Relevant practice: connect personality to actionable writing behavior, explain audiences, document approved formats and fallbacks, and identify when co-branded/partner uses need extra care.
+
 ## Free-software project culture and cooperative identity
 
 - GNU Project / Free Software Foundation, **The Free Software Definition**:
@@ -142,5 +162,7 @@ This repository's architecture and governance were reviewed against current bran
 - The meaning of "Libre" is grounded in software freedom and should be expressed through practical user freedoms rather than price claims.
 - Cooperative values may inform project stewardship and communication, but the manual must distinguish cooperative membership/governance from open project contribution.
 - Official project branding must remain distinguishable from third-party services, integrations, and distributions.
+- Brand manuals should define audience, positioning, messaging hierarchy, approved asset variants, and third-party/co-branding behavior when those decisions are mature enough to be normative.
+- Missing subsystems should be identified as intentionally undefined rather than filled with speculative photography, illustration, iconography, or campaign rules.
 - PDF is generated from open, text-based source.
 - The initial manual toolchain is Typst because it combines reproducible text source, strong visual layout, open licensing, Tagged PDF, and PDF/UA-1 support.
