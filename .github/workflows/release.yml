@@ -34,10 +34,9 @@ jobs:
           sha256sum             build/libresign-brand-manual.pdf             build/libresign-logo.svg             build/libresign-logo.pdf             build/libresign-logo.png             build/libresign-logo-reversed.svg             > build/SHA256SUMS
       - name: Validate PDF/UA-1 with veraPDF
         run: |
-          docker build --tag libresign-verapdf .github/verapdf
           docker run --rm \
             -v "$PWD/build:/data:ro" \
-            libresign-verapdf \
+            verapdf/cli:latest \
             --flavour ua1 --format text /data/libresign-brand-manual.pdf
       - name: Publish versioned release
         env:
