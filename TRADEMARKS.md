@@ -5,7 +5,7 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 
 # Trademark policy
 
-The copyright license for documentation and official artwork is CC BY-SA 4.0. Trademark rights are separate.
+LibreSign is a registered trademark in Brazil under INPI process `923392807`, Nice class 42. The copyright license for documentation and official artwork is CC BY-SA 4.0. Trademark rights are separate.
 
 The names and official marks of LibreSign may be used truthfully to refer to the project, organization, compatible services, integrations, reviews, documentation, and community activity, provided the use does not create confusion about source, affiliation, sponsorship, endorsement, or official status.
 
