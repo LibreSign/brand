@@ -178,55 +178,50 @@
   note,
 ) = {
   let unit = logo-width * unit-ratio
-  let marker-size = unit * 0.82
-  let outer-width = logo-width + unit + unit
+  let outer-width = logo-width + 2 * unit
 
   align(center)[
-    #stack(
-      dir: ttb,
-      spacing: 7mm,
+    #grid(
+      columns: (18mm, 1fr),
+      gutter: 6mm,
+      align: center + horizon,
       [
-        #grid(
-          columns: (22mm, 1fr),
-          gutter: 7mm,
-          align: center + horizon,
-          block(width: 20mm, height: 20mm, fill: white)[
-            #align(center + horizon)[
-              #image(marker, height: 15mm, fit: "contain", alt: marker-alt)
-            ]
-          ],
-          [
-            #text(font: theme.heading-font, size: 10pt, weight: "bold", fill: theme.accent)[E = clear-space module]
-            #v(1.5mm)
-            #text(font: theme.body-font, size: 8.8pt, fill: theme.neutral)[The capital E from the LibreSign wordmark defines the minimum non-interference distance.]
-          ],
-        )
-      ],
-      [
-        #block(
-          width: outer-width,
-          fill: white,
-          stroke: (paint: rgb("#c2ccc8"), thickness: 0.75pt, dash: "dashed"),
-          inset: 0pt,
-        )[
-          #place(top + center, dy: -marker-size / 2)[
-            #image(marker, height: marker-size, fit: "contain", alt: marker-alt)
-          ]
-          #place(bottom + center, dy: marker-size / 2)[
-            #image(marker, height: marker-size, fit: "contain", alt: marker-alt)
-          ]
-          #place(left + horizon, dx: -marker-size / 2)[
-            #rotate(-90deg, image(marker, height: marker-size, fit: "contain", alt: marker-alt))
-          ]
-          #place(right + horizon, dx: marker-size / 2)[
-            #rotate(90deg, image(marker, height: marker-size, fit: "contain", alt: marker-alt))
-          ]
-          #pad(left: unit, right: unit, top: unit, bottom: unit)[
-            #image(logo, width: logo-width, fit: "contain", alt: alt)
-          ]
+        #align(center + horizon)[
+          #image(marker, height: 12mm, fit: "contain", alt: marker-alt)
         ]
       ],
+      [
+        #text(font: theme.heading-font, size: 9.5pt, weight: "bold", fill: theme.accent)[E = clear-space module]
+        #v(1mm)
+        #text(font: theme.body-font, size: 8.5pt, fill: theme.neutral)[The highlighted E in LIBRE is the source glyph used to construct the exclusion area.]
+      ],
     )
+    #v(5mm)
+
+    #block(
+      width: outer-width,
+      fill: white,
+      stroke: (paint: rgb("#c2ccc8"), thickness: 0.75pt, dash: "dashed"),
+      inset: 0pt,
+    )[
+      // Each reference E occupies the clear-space band itself. The dashed
+      // rectangle is the outer exclusion boundary, not the marker centerline.
+      #place(top + center)[
+        #image(marker, height: unit, fit: "contain", alt: marker-alt)
+      ]
+      #place(bottom + center)[
+        #image(marker, height: unit, fit: "contain", alt: marker-alt)
+      ]
+      #place(left + horizon)[
+        #rotate(-90deg, image(marker, height: unit, fit: "contain", alt: marker-alt))
+      ]
+      #place(right + horizon)[
+        #rotate(90deg, image(marker, height: unit, fit: "contain", alt: marker-alt))
+      ]
+      #pad(left: unit, right: unit, top: unit, bottom: unit)[
+        #image(logo, width: logo-width, fit: "contain", alt: alt)
+      ]
+    ]
   ]
 
   v(6mm)
