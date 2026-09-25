@@ -11,6 +11,7 @@ on:
       - "source/fonts/**"
       - "scripts/build_assets.py"
       - ".github/workflows/manual.yml"
+      - ".github/verapdf/**"
   pull_request:
     paths:
       - "manual/**"
@@ -42,9 +43,10 @@ jobs:
           typst compile --root . --font-path source/fonts --pdf-standard ua-1 manual/main.typ build/brand-manual.pdf
       - name: Validate PDF/UA-1 with veraPDF
         run: |
+          docker build --tag libresign-verapdf .github/verapdf
           docker run --rm \
             -v "$PWD/build:/data:ro" \
-            verapdf/cli:v1.30.2 \
+            libresign-verapdf \
             --flavour ua1 --format text /data/brand-manual.pdf
       - uses: actions/upload-artifact@v6
         with:
