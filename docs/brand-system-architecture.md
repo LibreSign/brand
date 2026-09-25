@@ -10,7 +10,7 @@ This repository defines the current LibreSign brand system.
 ## Components
 
 - naming and pronunciation;
-- brand story and voice;
+- brand story, audience, messaging, and voice;
 - canonical artwork;
 - color and typography rules;
 - accessibility;
@@ -22,7 +22,9 @@ This repository defines the current LibreSign brand system.
 
 ## Asset model
 
-`source/artwork/` contains canonical artwork. CI produces public derivatives.
+`source/artwork/` contains the only editable logo source and its machine-readable asset contract. CI produces public derivatives in temporary build output and release artifacts.
+
+Correct/incorrect-use examples are maintained directly in the generated manual because they are normative guidance, not a second set of editable artwork files.
 
 ## Licensing
 
@@ -34,3 +36,7 @@ This repository defines the current LibreSign brand system.
 ## Publication
 
 Git repository → generated assets/manual → public website/releases.
+
+## Migration boundary
+
+The repository replaces the previous proprietary/manual workflow as the source of truth. Historical or design-tool files may be kept outside the canonical system for archival reference, but they must not override the reviewed files in this repository.
