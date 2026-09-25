@@ -48,7 +48,7 @@ jobs:
         run: |
           docker run --rm \
             -v "$PWD/build:/data:ro" \
-            ghcr.io/verapdf/cli:v1.30.2 \
+            verapdf/cli:v1.30.2 \
             --flavour ua1 --format text /data/libresign-brand-manual.pdf
       - name: Move latest tag to this build
         run: |
