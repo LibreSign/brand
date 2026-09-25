@@ -83,6 +83,7 @@
   numbering: none,
   fill: if theme.motif == "nodes" { theme.paper } else { theme.accent },
 )[
+  #metadata(none) #label(anchor)
   #motif(theme)
   #pad(left: 25mm, right: 24mm, top: 30mm, bottom: 24mm)[
     #v(1fr)
@@ -102,7 +103,7 @@
         weight: "bold",
         fill: if theme.motif == "nodes" { theme.ink } else { white },
       )[#title]
-    ] #label(anchor)
+    ]
     #v(4mm)
     #block(width: 115mm)[
       #text(
