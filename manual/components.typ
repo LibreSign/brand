@@ -60,16 +60,16 @@
     ] #label("contents")
     #v(16mm)
     #for entry in entries {
-      let dest = label(entry.at(3))
+      let dest = label(entry.anchor)
       link(dest)[
         #grid(
           columns: (15mm, 1fr),
           gutter: 4mm,
-          text(font: theme.heading-font, size: 16pt, weight: "bold", fill: theme.accent)[#entry.at(0)],
+          text(font: theme.heading-font, size: 16pt, weight: "bold", fill: theme.accent)[#entry.number],
           [
-            #text(font: theme.heading-font, size: 13pt, weight: "semibold", fill: theme.ink)[#entry.at(1)]
+            #text(font: theme.heading-font, size: 13pt, weight: "semibold", fill: theme.ink)[#entry.title]
             #v(1.5mm)
-            #text(font: theme.body-font, size: 9.5pt, fill: theme.neutral)[#entry.at(2)]
+            #text(font: theme.body-font, size: 9.5pt, fill: theme.neutral)[#entry.summary]
           ],
         )
       ]
