@@ -26,11 +26,36 @@
   theme,
   [Brand system],
   (
-    ("01", "Foundations", "Purpose, audience, freedom, culture, messaging, and voice", "section-foundations"),
-    ("02", "Logo", "Official artwork, approved versions, composition, and use", "section-logo"),
-    ("03", "Visual system", "Logo color, digital palette, typography, clear space, and scale", "section-visual-system"),
-    ("04", "Usage", "Applications, partner use, misuse, and accessibility", "section-usage"),
-    ("05", "Rules and ownership", "Licensing, trademark, and official sources", "section-governance"),
+    (
+      number: "01",
+      title: "Foundations",
+      summary: "Purpose, audience, freedom, culture, messaging, and voice",
+      anchor: "section-foundations",
+    ),
+    (
+      number: "02",
+      title: "Logo",
+      summary: "Official artwork, approved versions, composition, and use",
+      anchor: "section-logo",
+    ),
+    (
+      number: "03",
+      title: "Visual system",
+      summary: "Logo color, digital palette, typography, clear space, and scale",
+      anchor: "section-visual-system",
+    ),
+    (
+      number: "04",
+      title: "Usage",
+      summary: "Applications, partner use, misuse, and accessibility",
+      anchor: "section-usage",
+    ),
+    (
+      number: "05",
+      title: "Rules and ownership",
+      summary: "Licensing, trademark, and official sources",
+      anchor: "section-governance",
+    ),
   ),
 )
 
