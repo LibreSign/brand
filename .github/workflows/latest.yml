@@ -12,7 +12,6 @@ on:
       - "source/fonts/**"
       - "scripts/build_assets.py"
       - ".github/workflows/latest.yml"
-      - ".github/verapdf/**"
   workflow_dispatch:
 
 permissions:
@@ -47,10 +46,9 @@ jobs:
           sha256sum build/libresign-brand-manual.pdf build/libresign-logo* > build/SHA256SUMS
       - name: Validate PDF/UA-1 with veraPDF
         run: |
-          docker build --tag libresign-verapdf .github/verapdf
           docker run --rm \
             -v "$PWD/build:/data:ro" \
-            libresign-verapdf \
+            verapdf/cli:latest \
             --flavour ua1 --format text /data/libresign-brand-manual.pdf
       - name: Move latest tag to this build
         run: |
