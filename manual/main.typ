@@ -11,14 +11,6 @@
 #set text(font: theme.body-font, lang: "en", size: 10.5pt, fill: theme.ink)
 #set par(leading: 0.72em, spacing: 0.7em, justify: false)
 #set list(indent: 0pt, body-indent: 1.2em)
-#show heading.where(level: 1): it => text(
-  font: theme.heading-font,
-  size: 24pt,
-  weight: "bold",
-  fill: theme.ink,
-  it.body,
-)
-
 #cover(
   theme,
   [LibreSign Brand Manual],
@@ -31,11 +23,11 @@
   theme,
   [Brand system],
   (
-    ("01", "Foundations", "Purpose, freedom, culture, stewardship, pronunciation, and voice"),
-    ("02", "Logo", "Canonical artwork and composition"),
-    ("03", "Visual system", "Logo color, digital palette, typography, clear space, and scale"),
-    ("04", "Usage", "Correct use, misuse, backgrounds, and accessibility"),
-    ("05", "Governance", "Licensing, trademark, and canonical source"),
+    ("01", "Foundations", "Purpose, freedom, culture, stewardship, pronunciation, and voice", "section-foundations"),
+    ("02", "Logo", "Canonical artwork and composition", "section-logo"),
+    ("03", "Visual system", "Logo color, digital palette, typography, clear space, and scale", "section-visual-system"),
+    ("04", "Usage", "Correct use, misuse, backgrounds, and accessibility", "section-usage"),
+    ("05", "Governance", "Licensing, trademark, and canonical source", "section-governance"),
   ),
 )
 
@@ -44,6 +36,7 @@
   [01],
   [Foundations],
   [The brand starts with its name and the idea of freedom expressed by "Libre".],
+  "section-foundations",
 )
 
 #manual-page(theme, [Foundations], [How to use this manual])[
@@ -195,6 +188,7 @@
   [02],
   [Logo],
   [Official artwork is a technical asset. Its geometry must not be redrawn or reinterpreted.],
+  "section-logo",
 )
 
 #manual-page(theme, [Logo], [Primary mark])[
@@ -256,6 +250,7 @@
   [03],
   [Visual system],
   [Color, typography, and space work together so the brand is recognizable before the words are read.],
+  "section-visual-system",
 )
 
 #manual-page(theme, [Visual system], [Logo colors])[
@@ -365,6 +360,7 @@
   [04],
   [Usage],
   [Consistency does not mean rigidity: it means the brand remains recognizable across contexts.],
+  "section-usage",
 )
 
 #manual-page(theme, [Usage], [Application])[
@@ -476,6 +472,7 @@
   [05],
   [Governance],
   [The brand is a public, versioned system: rules, artwork, and manual evolve together.],
+  "section-governance",
 )
 
 #manual-page(theme, [Governance], [Project, cooperative, and brand])[
