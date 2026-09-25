@@ -5,6 +5,7 @@
 from __future__ import annotations
 
 import argparse
+import copy
 import json
 import re
 import shutil
@@ -62,27 +63,125 @@ def crop_reference(source: Path, target: Path, fraction: list[float], padding: f
     tree.write(target, encoding="unicode", xml_declaration=True)
 
 
-def build_highlighted_diagram(
-    source: Path,
-    target: Path,
-    attribute: str,
-    value: str,
-    color: str,
-    padding: float,
-) -> None:
+def build_clear_space_diagram(source: Path, target: Path, diagram: dict) -> None:
     tree = ET.parse(source)
-    root = tree.getroot()
-    matches = [element for element in root.iter() if element.attrib.get(attribute) == value]
+    source_root = tree.getroot()
+    namespace = "http://www.w3.org/2000/svg"
+    ET.register_namespace("", namespace)
+
+    def tag(name: str) -> str:
+        return f"{{{namespace}}}{name}"
+
+    highlight = diagram["highlight"]
+    matches = [
+        element
+        for element in source_root.iter()
+        if element.attrib.get(highlight["attribute"]) == highlight["value"]
+    ]
     if len(matches) != 1:
         raise ValueError(
-            f"Expected exactly one clear-space highlight element for {attribute}={value!r}, found {len(matches)}"
+            "Expected exactly one clear-space reference glyph, "
+            f"found {len(matches)} for {highlight['attribute']}={highlight['value']!r}"
         )
-    matches[0].set("fill", color)
 
-    with tempfile.TemporaryDirectory() as tmp:
-        staged = Path(tmp) / "clear-space-diagram.svg"
-        tree.write(staged, encoding="unicode", xml_declaration=True)
-        normalize_svg(staged, target, padding)
+    _, _, marker_width, marker_height = [float(v) for v in diagram["marker_bbox"]]
+    unit = marker_height
+    contacts = {
+        side: tuple(float(value) for value in point)
+        for side, point in diagram["contacts"].items()
+    }
+
+    left_x = contacts["left"][0] - unit
+    right_x = contacts["right"][0] + unit
+    top_y = contacts["top"][1] - unit
+    bottom_y = contacts["bottom"][1] + unit
+    canvas_width = right_x - left_x
+    canvas_height = bottom_y - top_y
+
+    root = ET.Element(
+        tag("svg"),
+        {
+            "viewBox": f"{left_x:.6f} {top_y:.6f} {canvas_width:.6f} {canvas_height:.6f}",
+            "role": "img",
+            "aria-label": "LibreSign clear-space construction",
+        },
+    )
+    title = ET.SubElement(root, tag("title"))
+    title.text = "LibreSign clear-space construction"
+
+    ET.SubElement(
+        root,
+        tag("rect"),
+        {
+            "x": f"{left_x:.6f}",
+            "y": f"{top_y:.6f}",
+            "width": f"{canvas_width:.6f}",
+            "height": f"{canvas_height:.6f}",
+            "fill": "#ffffff",
+        },
+    )
+    ET.SubElement(
+        root,
+        tag("rect"),
+        {
+            "x": f"{left_x:.6f}",
+            "y": f"{top_y:.6f}",
+            "width": f"{canvas_width:.6f}",
+            "height": f"{canvas_height:.6f}",
+            "fill": "none",
+            "stroke": diagram.get("boundary_color", "#c2ccc8"),
+            "stroke-width": "2",
+            "stroke-dasharray": "10 9",
+        },
+    )
+
+    # The canonical logo remains the geometry source. Only the final E is
+    # recolored in this technical derivative to identify the reference glyph.
+    logo_group = ET.SubElement(root, tag("g"))
+    for child in source_root:
+        cloned = copy.deepcopy(child)
+        if cloned.attrib.get(highlight["attribute"]) == highlight["value"]:
+            cloned.set("fill", highlight["color"])
+        logo_group.append(cloned)
+
+    marker_source = matches[0]
+    marker_color = diagram.get("marker_color", "#c2ccc8")
+
+    def add_marker(transform: str) -> None:
+        marker = copy.deepcopy(marker_source)
+        marker.attrib.pop("transform", None)
+        marker.set("fill", marker_color)
+        group = ET.SubElement(root, tag("g"), {"transform": transform})
+        group.append(marker)
+
+    # Each E spans exactly one clear-space unit and touches the actual artwork
+    # at a brand-specific contact point instead of being centered on the box.
+    top_x, top_contact_y = contacts["top"]
+    add_marker(
+        f"translate({top_x - marker_width / 2:.6f} "
+        f"{top_contact_y - marker_height:.6f})"
+    )
+
+    bottom_x, bottom_contact_y = contacts["bottom"]
+    add_marker(
+        f"translate({bottom_x - marker_width / 2:.6f} "
+        f"{bottom_contact_y:.6f})"
+    )
+
+    left_contact_x, left_y = contacts["left"]
+    add_marker(
+        f"translate({left_contact_x - marker_height:.6f} "
+        f"{left_y + marker_width / 2:.6f}) rotate(-90)"
+    )
+
+    right_contact_x, right_y = contacts["right"]
+    add_marker(
+        f"translate({right_contact_x + marker_height:.6f} "
+        f"{right_y - marker_width / 2:.6f}) rotate(90)"
+    )
+
+    target.parent.mkdir(parents=True, exist_ok=True)
+    ET.ElementTree(root).write(target, encoding="unicode", xml_declaration=True)
 
 
 def export(svg: Path, out_dir: Path, png_widths: list[int]) -> None:
@@ -143,16 +242,8 @@ def main() -> int:
 
         diagram = spec.get("clear_space", {}).get("diagram")
         if diagram:
-            highlight = diagram["highlight"]
             diagram_target = out_dir / diagram["filename"]
-            build_highlighted_diagram(
-                master,
-                diagram_target,
-                highlight["attribute"],
-                highlight["value"],
-                highlight["color"],
-                diagram.get("padding_ratio", 0.0),
-            )
+            build_clear_space_diagram(master, diagram_target, diagram)
             export(diagram_target, out_dir, [512, 1024])
 
     primary = variants["primary"]
