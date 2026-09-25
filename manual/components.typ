@@ -60,16 +60,16 @@
     ] #label("contents")
     #v(16mm)
     #for entry in entries {
-      let dest = label(entry.at(3))
+      let dest = label(entry.anchor)
       link(dest)[
         #grid(
           columns: (15mm, 1fr),
           gutter: 4mm,
-          text(font: theme.heading-font, size: 16pt, weight: "bold", fill: theme.accent)[#entry.at(0)],
+          text(font: theme.heading-font, size: 16pt, weight: "bold", fill: theme.accent)[#entry.number],
           [
-            #text(font: theme.heading-font, size: 13pt, weight: "semibold", fill: theme.ink)[#entry.at(1)]
+            #text(font: theme.heading-font, size: 13pt, weight: "semibold", fill: theme.ink)[#entry.title]
             #v(1.5mm)
-            #text(font: theme.body-font, size: 9.5pt, fill: theme.neutral)[#entry.at(2)]
+            #text(font: theme.body-font, size: 9.5pt, fill: theme.neutral)[#entry.summary]
           ],
         )
       ]
@@ -208,122 +208,6 @@
   v(6mm)
   align(center)[
     #block(width: 128mm)[
-      #text(font: theme.body-font, size: 9pt, fill: theme.neutral)[#note]
-    ]
-  ]
-}
-
-#let librecode-clear-space(
-  theme,
-  logo,
-  alt,
-  marker,
-  marker-alt,
-  logo-width,
-  unit-ratio,
-  note,
-) = {
-  let unit = logo-width * unit-ratio
-
-  align(center)[
-    #stack(
-      dir: ttb,
-      spacing: 8mm,
-      [
-        #grid(
-          columns: (26mm, 1fr),
-          gutter: 7mm,
-          align: center + horizon,
-          [
-            #stack(
-              dir: ttb,
-              spacing: 1.5mm,
-              align(center)[
-                #image(marker, width: 18mm, fit: "contain", alt: marker-alt)
-              ],
-              align(center)[
-                #line(length: 18mm, stroke: (paint: theme.neutral, thickness: 0.7pt))
-              ],
-              align(center)[
-                #text(font: theme.heading-font, size: 10pt, weight: "medium", fill: theme.neutral)[X]
-              ],
-            )
-          ],
-          [
-            #text(font: theme.heading-font, size: 10pt, weight: "bold", fill: theme.accent)[D defines X]
-            #v(1.5mm)
-            #text(font: theme.body-font, size: 8.8pt, fill: theme.neutral)[The width of the D in CODE is the clear-space unit X.]
-          ],
-        )
-      ],
-      [
-        #block(
-          fill: luma(88%),
-          stroke: (paint: theme.neutral, thickness: 0.7pt),
-          inset: 0pt,
-        )[
-          #grid(
-            columns: (unit, logo-width, unit),
-            rows: (unit, auto, unit),
-            align: center + horizon,
-            [
-              #stack(
-                dir: ttb,
-                spacing: 1mm,
-                align(center)[#text(font: theme.heading-font, size: 11pt, fill: theme.neutral)[X]],
-                align(center)[#line(length: unit * 0.72, stroke: (paint: theme.neutral, thickness: 0.7pt))],
-              )
-            ],
-            [
-              #align(center + horizon)[
-                #stack(
-                  dir: ttb,
-                  spacing: 1mm,
-                  line(length: unit * 0.72, angle: 90deg, stroke: (paint: theme.neutral, thickness: 0.7pt)),
-                  text(font: theme.heading-font, size: 11pt, fill: theme.neutral)[X],
-                )
-              ]
-            ],
-            [],
-            [
-              #align(center + horizon)[
-                #stack(
-                  dir: ttb,
-                  spacing: 1mm,
-                  line(length: unit * 0.72, angle: 90deg, stroke: (paint: theme.neutral, thickness: 0.7pt)),
-                  text(font: theme.heading-font, size: 11pt, fill: theme.neutral)[X],
-                )
-              ]
-            ],
-            block(
-              width: logo-width,
-              fill: white,
-              stroke: (paint: theme.neutral, thickness: 0.7pt),
-              inset: 0pt,
-            )[
-              #image(logo, width: logo-width, fit: "contain", alt: alt)
-            ],
-            [
-              #align(center + horizon)[
-                #text(font: theme.heading-font, size: 11pt, fill: theme.neutral)[X]
-              ]
-            ],
-            [],
-            [
-              #align(center + horizon)[
-                #text(font: theme.heading-font, size: 11pt, fill: theme.neutral)[X]
-              ]
-            ],
-            [],
-          )
-        ]
-      ],
-    )
-  ]
-
-  v(7mm)
-  align(center)[
-    #block(width: 132mm)[
       #text(font: theme.body-font, size: 9pt, fill: theme.neutral)[#note]
     ]
   ]

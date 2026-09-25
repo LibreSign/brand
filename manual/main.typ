@@ -2,7 +2,10 @@
 // SPDX-License-Identifier: CC-BY-SA-4.0
 
 #import "theme.typ": theme
-#import "components.typ": cover, toc-page, section-page, manual-page, logo-stage, swatch, specimen, libresign-clear-space, librecode-clear-space, rule-pair, statement, back-cover
+#import "components.typ": (
+  back-cover, cover, libresign-clear-space, logo-stage, manual-page, rule-pair, section-page, specimen, statement,
+  swatch, toc-page,
+)
 
 #set document(
   title: "LibreSign Brand Manual",
@@ -23,11 +26,36 @@
   theme,
   [Brand system],
   (
-    ("01", "Foundations", "Purpose, audience, freedom, culture, messaging, and voice", "section-foundations"),
-    ("02", "Logo", "Official artwork, approved versions, composition, and use", "section-logo"),
-    ("03", "Visual system", "Logo color, digital palette, typography, clear space, and scale", "section-visual-system"),
-    ("04", "Usage", "Applications, partner use, misuse, and accessibility", "section-usage"),
-    ("05", "Rules and ownership", "Licensing, trademark, and official sources", "section-governance"),
+    (
+      number: "01",
+      title: "Foundations",
+      summary: "Purpose, audience, freedom, culture, messaging, and voice",
+      anchor: "section-foundations",
+    ),
+    (
+      number: "02",
+      title: "Logo",
+      summary: "Official artwork, approved versions, composition, and use",
+      anchor: "section-logo",
+    ),
+    (
+      number: "03",
+      title: "Visual system",
+      summary: "Logo color, digital palette, typography, clear space, and scale",
+      anchor: "section-visual-system",
+    ),
+    (
+      number: "04",
+      title: "Usage",
+      summary: "Applications, partner use, misuse, and accessibility",
+      anchor: "section-usage",
+    ),
+    (
+      number: "05",
+      title: "Rules and ownership",
+      summary: "Licensing, trademark, and official sources",
+      anchor: "section-governance",
+    ),
   ),
 )
 
@@ -254,9 +282,14 @@
     ],
     block(fill: theme.ink, inset: 7mm, height: 44mm)[
       #align(center + horizon)[
-        #image("../build/assets/libresign-logo-reversed.svg", width: 82%, alt: "White LibreSign logo for dark backgrounds")
+        #image(
+          "../build/assets/libresign-logo-reversed.svg",
+          width: 82%,
+          alt: "White LibreSign logo for dark backgrounds",
+        )
       ]
     ],
+
     block(fill: white, inset: 7mm, height: 44mm)[
       #align(center + horizon)[
         #image("../build/assets/libresign-logo-monochrome.svg", width: 82%, alt: "Black one-color LibreSign logo")
@@ -453,17 +486,30 @@
     ],
     block(fill: theme.soft, inset: 8mm, height: 58mm)[
       #align(center + horizon)[
-        #image("../build/assets/libresign-logo-primary.svg", width: 78%, alt: "Primary LibreSign logo on a light green field")
+        #image(
+          "../build/assets/libresign-logo-primary.svg",
+          width: 78%,
+          alt: "Primary LibreSign logo on a light green field",
+        )
       ]
     ],
+
     block(fill: theme.ink, inset: 8mm, height: 58mm)[
       #align(center + horizon)[
-        #image("../build/assets/libresign-logo-reversed.svg", width: 78%, alt: "White LibreSign logo on a dark neutral background")
+        #image(
+          "../build/assets/libresign-logo-reversed.svg",
+          width: 78%,
+          alt: "White LibreSign logo on a dark neutral background",
+        )
       ]
     ],
     block(fill: theme.accent, inset: 8mm, height: 58mm)[
       #align(center + horizon)[
-        #image("../build/assets/libresign-logo-reversed.svg", width: 78%, alt: "White LibreSign logo on the primary teal background")
+        #image(
+          "../build/assets/libresign-logo-reversed.svg",
+          width: 78%,
+          alt: "White LibreSign logo on the primary teal background",
+        )
       ]
     ],
   )
@@ -502,7 +548,11 @@
     [CORRECT],
     [
       #align(center)[
-        #image("../build/assets/libresign-logo-primary.svg", width: 72%, alt: "Correct unmodified LibreSign logo on white")
+        #image(
+          "../build/assets/libresign-logo-primary.svg",
+          width: 72%,
+          alt: "Correct unmodified LibreSign logo on white",
+        )
       ]
       #v(4mm)
       Use the official artwork at its original proportions and preserve clear space.
@@ -525,7 +575,11 @@
     [
       #block(fill: white, inset: 8mm)[
         #align(center)[
-          #image("../build/assets/libresign-logo-primary.svg", width: 72%, alt: "LibreSign logo with generous clear space")
+          #image(
+            "../build/assets/libresign-logo-primary.svg",
+            width: 72%,
+            alt: "LibreSign logo with generous clear space",
+          )
         ]
       ]
       #v(4mm)
@@ -538,7 +592,11 @@
           columns: (1fr, auto),
           gutter: 1mm,
           align: center + horizon,
-          image("../build/assets/libresign-logo-primary.svg", width: 100%, alt: "LibreSign logo crowded by nearby text"),
+          image(
+            "../build/assets/libresign-logo-primary.svg",
+            width: 100%,
+            alt: "LibreSign logo crowded by nearby text",
+          ),
           text(font: theme.heading-font, size: 9pt, weight: "bold", fill: theme.ink)[PARTNER],
         )
       ]

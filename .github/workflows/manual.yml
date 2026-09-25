@@ -31,6 +31,15 @@ jobs:
       - uses: typst-community/setup-typst@40d32bb6ccb235bd7f5164cb47cfd40a5ea3a314 # v5.2.0
         with:
           typst-version: 0.15.1
+      - name: Check Typst formatting
+        uses: typstyle-rs/typstyle-action@29e8697c27707b43f1dc08d3aba17868e14a1ce2 # v1.0.1
+        with:
+          # typstyle-action splits options on newlines, not spaces.
+          opts: |
+            --diff
+            --line-width
+            120
+          inputs: manual
       - name: Install asset toolchain
         run: |
           sudo apt-get update
