@@ -43,7 +43,7 @@ jobs:
           chmod +x /tmp/typstyle
           sudo install /tmp/typstyle /usr/local/bin/typstyle
       - name: Check Typst formatting
-        run: typstyle --diff --line-width 100 manual
+        run: typstyle --diff --line-width 120 manual
       - name: Install asset toolchain
         run: |
           sudo apt-get update
