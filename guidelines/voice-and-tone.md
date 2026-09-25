@@ -7,6 +7,16 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 
 LibreSign should sound trustworthy, technically precise, privacy-aware, practical, and open to participation.
 
+## Plain international English
+
+Write for readers who may use English as a second language.
+
+Prefer short sentences, common words, and one idea at a time. Use a specialist term only when it adds necessary precision. When a technical, legal, accessibility, or brand-design term cannot be avoided, explain it in plain language the first time it appears.
+
+Prefer concrete words such as “control”, “works with other systems”, “official source”, and “can be checked” over abstract wording such as “autonomy”, “interoperability”, “canonical source”, or “verifiability” when the simpler wording keeps the same meaning.
+
+Avoid idioms, jokes that depend on English-language culture, marketing clichés, and phrasal expressions that are difficult to translate literally.
+
 ## Prefer
 - explain control, interoperability, self-hosting, and auditability concretely;
 - distinguish electronic-signature capabilities from legal guarantees;
