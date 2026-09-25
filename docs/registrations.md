@@ -22,7 +22,14 @@ LibreSign computer-program registration with INPI:
 
 - registration: `BR512021001420-0`;
 - process: `512021001420-0`;
-- filing date: 2021-06-25.
+- title: `LibreSign`;
+- holder recorded by INPI: `LYSEON TECH COOPERATIVA DE TRABALHO E SOLUÇÕES TECNOLÓGICAS`;
+- creation date: 2021-02-25;
+- publication date: 2021-02-25;
+- filing date: 2021-06-25;
+- certificate issued: 2021-07-06.
+
+The registration request also records the software as licensed under GNU Affero General Public License v3.0 and identifies PHP, JavaScript, SQL-family technologies, CSS, HTML, Java, JSON, and Node.js among the declared technologies.
 
 This software registration is separate from the LibreSign trademark registration and must not be cited as evidence of trademark status.
 
