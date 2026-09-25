@@ -45,12 +45,37 @@
       "padding": 0
     },
     "diagram": {
-      "filename": "libresign-clear-space-logo.svg",
-      "padding_ratio": 0,
+      "filename": "libresign-clear-space-diagram.svg",
       "highlight": {
         "attribute": "transform",
         "value": "translate(1176,108)",
         "color": "#e56655"
+      },
+      "marker_bbox": [
+        1176,
+        108,
+        136,
+        192
+      ],
+      "marker_color": "#c2ccc8",
+      "boundary_color": "#c2ccc8",
+      "contacts": {
+        "top": [
+          326.375,
+          1.375
+        ],
+        "bottom": [
+          261,
+          571.315
+        ],
+        "left": [
+          0,
+          240.56
+        ],
+        "right": [
+          1312,
+          285
+        ]
       }
     }
   },
