@@ -509,8 +509,6 @@
           width: 78%,
           height: if slides { 30mm } else { auto },
           fit: "contain",
-          height: if slides { 30mm } else { auto },
-          fit: "contain",
           alt: "Primary LibreSign logo on white",
         )
       ]
