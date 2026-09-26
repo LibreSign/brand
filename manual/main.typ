@@ -678,8 +678,10 @@
               height: if slides { 18mm } else { auto },
               fit: "contain",
               alt: "LibreSign logo crowded by nearby text",
-          ),
-          move(dx: if slides { -2mm } else { -1mm })[\n              #text(font: theme.heading-font, size: 8.5pt, weight: "semibold", fill: theme.ink)[Partner]\n            ],
+            ),
+            move(dx: if slides { -2mm } else { -1mm })[
+              #text(font: theme.heading-font, size: 8.5pt, weight: "semibold", fill: theme.ink)[Partner]
+            ],
           )
         ]
       ]
