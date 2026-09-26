@@ -339,7 +339,8 @@
           width: 84%,
           height: if slides { 42mm } else { auto },
           fit: "contain",
-          alt: "Official LibreSign logo composition")
+          alt: "Official LibreSign logo composition",
+        )
       ]
     ],
     [
