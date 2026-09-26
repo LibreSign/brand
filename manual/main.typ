@@ -505,20 +505,29 @@
   #let app-example(label, background, foreground, logo, alt, note) = block(
     fill: background,
     inset: if slides { 5mm } else { 6mm },
-    height: if slides { 49mm } else { 48mm },
+    height: if slides { 50mm } else { 48mm },
     [
-      #text(font: theme.heading-font, size: if slides { 8pt } else { 7.5pt }, weight: "bold", fill: foreground)[#label]
-      #v(if slides { 2mm } else { 3mm })
-      #align(center)[
-        #image(
-          logo,
-          width: 74%,
-          height: if slides { 19mm } else { 17mm },
-          fit: "contain",
-          alt: alt,
-        )
+      #block(height: if slides { 7mm } else { 6mm })[
+        #text(
+          font: theme.heading-font,
+          size: if slides { 8.5pt } else { 7.5pt },
+          weight: "semibold",
+          fill: foreground,
+        )[#label]
       ]
-      #v(if slides { 1.5mm } else { 2mm })
+      #align(center)[
+        #block(height: if slides { 22mm } else { 19mm })[
+          #align(center + horizon)[
+            #image(
+              logo,
+              width: 74%,
+              height: if slides { 18mm } else { 17mm },
+              fit: "contain",
+              alt: alt,
+            )
+          ]
+        ]
+      ]
       #text(size: if slides { 8.5pt } else { 8pt }, fill: foreground)[#note]
     ],
   )
@@ -527,7 +536,7 @@
     columns: if slides { (1fr, 1fr, 1fr) } else { (1fr, 1fr) },
     gutter: if slides { 4mm } else { 5mm },
     app-example(
-      [CORRECT · LIGHT BACKGROUND],
+      [Correct · light background],
       white,
       theme.ink,
       "../build/assets/libresign-logo-primary.svg",
@@ -535,7 +544,7 @@
       [Use the primary logo on light, visually stable surfaces.],
     ),
     app-example(
-      [CORRECT · DARK BACKGROUND],
+      [Correct · dark background],
       theme.ink,
       white,
       "../build/assets/libresign-logo-reversed.svg",
@@ -543,7 +552,7 @@
       [Use the white logo on dark or strong-color backgrounds.],
     ),
     app-example(
-      [CORRECT · BRAND COLOR],
+      [Correct · brand color],
       theme.accent,
       white,
       "../build/assets/libresign-logo-reversed.svg",
@@ -551,7 +560,7 @@
       [On saturated brand fields, prefer the white version for clear contrast.],
     ),
     app-example(
-      [DON'T · LOW CONTRAST],
+      [Don't · low contrast],
       theme.ink,
       white,
       "../build/assets/libresign-logo-primary.svg",
@@ -559,7 +568,7 @@
       [Do not use the primary logo when the background makes it hard to read.],
     ),
     app-example(
-      [DON'T · WHITE ON LIGHT],
+      [Don't · white on light],
       theme.soft,
       theme.ink,
       "../build/assets/libresign-logo-reversed.svg",
@@ -567,7 +576,7 @@
       [Do not use the white logo on light backgrounds when it loses definition.],
     ),
     app-example(
-      [UNSTABLE BACKGROUND],
+      [Unstable background],
       theme.soft,
       theme.ink,
       "../build/assets/libresign-logo-primary.svg",
@@ -604,7 +613,7 @@
   #v(if slides { 2mm } else { 6mm })
   #rule-pair(
     theme,
-    [CORRECT],
+    [Correct use],
     [
       #align(center)[
         #image(
@@ -618,7 +627,7 @@
       #v(if slides { 1mm } else { 4mm })
       Use the official artwork at its original proportions and preserve clear space.
     ],
-    [DON'T ROTATE],
+    [Don't rotate],
     [
       #align(center)[
         #rotate(8deg)[
@@ -634,11 +643,12 @@
       #v(if slides { 1mm } else { 4mm })
       Do not rotate, skew, distort, or otherwise reinterpret the mark.
     ],
+    card-height: if slides { 49mm } else { auto },
   )
   #v(if slides { 2mm } else { 7mm })
   #rule-pair(
     theme,
-    [CORRECT CLEAR SPACE],
+    [Correct clear space],
     [
       #block(fill: white, inset: 8mm)[
         #align(center)[
@@ -654,26 +664,29 @@
       #v(if slides { 1mm } else { 4mm })
       Keep surrounding text, borders, and partner marks outside the exclusion area.
     ],
-    [DON'T CROWD],
+    [Don't crowd],
     [
       #block(fill: white, inset: 1mm)[
-        #grid(
-          columns: (1fr, auto),
-          gutter: 1mm,
-          align: center + horizon,
-          image(
-            "../build/assets/libresign-logo-primary.svg",
-            width: 100%,
-            height: if slides { 18mm } else { auto },
-            fit: "contain",
-            alt: "LibreSign logo crowded by nearby text",
+        #align(center)[
+          #grid(
+            columns: (auto, auto),
+            gutter: 0mm,
+            align: center + horizon,
+            image(
+              "../build/assets/libresign-logo-primary.svg",
+              width: if slides { 44mm } else { 52mm },
+              height: if slides { 18mm } else { auto },
+              fit: "contain",
+              alt: "LibreSign logo crowded by nearby text",
           ),
-          text(font: theme.heading-font, size: 9pt, weight: "bold", fill: theme.ink)[PARTNER],
-        )
+          move(dx: if slides { -2mm } else { -1mm })[\n              #text(font: theme.heading-font, size: 8.5pt, weight: "semibold", fill: theme.ink)[Partner]\n            ],
+          )
+        ]
       ]
       #v(if slides { 1mm } else { 4mm })
       Do not place other content inside the required empty space around the logo.
     ],
+    card-height: if slides { 49mm } else { auto },
   )
 ]
 
