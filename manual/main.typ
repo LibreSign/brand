@@ -526,7 +526,7 @@
   #grid(
     columns: if slides { (1fr, 1fr, 1fr) } else { (1fr, 1fr) },
     gutter: if slides { 4mm } else { 5mm },
-    #app-example(
+    app-example(
       [CORRECT · LIGHT BACKGROUND],
       white,
       theme.ink,
@@ -534,7 +534,7 @@
       "Primary LibreSign logo on white",
       [Use the primary logo on light, visually stable surfaces.],
     ),
-    #app-example(
+    app-example(
       [CORRECT · DARK BACKGROUND],
       theme.ink,
       white,
@@ -542,7 +542,7 @@
       "White LibreSign logo on a dark background",
       [Use the white logo on dark or strong-color backgrounds.],
     ),
-    #app-example(
+    app-example(
       [CORRECT · BRAND COLOR],
       theme.accent,
       white,
@@ -550,7 +550,7 @@
       "White LibreSign logo on the primary teal background",
       [On saturated brand fields, prefer the white version for clear contrast.],
     ),
-    #app-example(
+    app-example(
       [DON'T · LOW CONTRAST],
       theme.ink,
       white,
@@ -558,7 +558,7 @@
       "Incorrect primary LibreSign logo on a dark background",
       [Do not use the primary logo when the background makes it hard to read.],
     ),
-    #app-example(
+    app-example(
       [DON'T · WHITE ON LIGHT],
       theme.soft,
       theme.ink,
@@ -566,7 +566,7 @@
       "Incorrect white LibreSign logo on a light background",
       [Do not use the white logo on light backgrounds when it loses definition.],
     ),
-    #app-example(
+    app-example(
       [UNSTABLE BACKGROUND],
       theme.soft,
       theme.ink,
