@@ -328,9 +328,18 @@
   #grid(
     columns: (1.15fr, 0.85fr),
     gutter: 10mm,
-    block(fill: white, inset: 10mm, height: 78mm)[
+    block(
+      fill: white,
+      inset: if slides { 8mm } else { 10mm },
+      height: if slides { 58mm } else { 78mm },
+    )[
       #align(center + horizon)[
-        #image("../build/assets/libresign-logo-primary.svg", width: 84%, alt: "Official LibreSign logo composition")
+        #image(
+          "../build/assets/libresign-logo-primary.svg",
+          width: 84%,
+          height: if slides { 42mm } else { auto },
+          fit: "contain",
+          alt: "Official LibreSign logo composition")
       ]
     ],
     [
@@ -493,35 +502,49 @@
   #grid(
     columns: (1fr, 1fr),
     gutter: 7mm,
-    block(fill: white, inset: 8mm, height: 58mm)[
-      #align(center + horizon)[
-        #image("../build/assets/libresign-logo-primary.svg", width: 78%, alt: "Primary LibreSign logo on white")
-      ]
-    ],
-    block(fill: theme.soft, inset: 8mm, height: 58mm)[
+    block(fill: white, inset: if slides { 6mm } else { 8mm }, height: if slides { 44mm } else { 58mm })[
       #align(center + horizon)[
         #image(
           "../build/assets/libresign-logo-primary.svg",
           width: 78%,
+          height: if slides { 30mm } else { auto },
+          fit: "contain",
+          height: if slides { 30mm } else { auto },
+          fit: "contain",
+          alt: "Primary LibreSign logo on white",
+        )
+      ]
+    ],
+    block(fill: theme.soft, inset: if slides { 6mm } else { 8mm }, height: if slides { 44mm } else { 58mm })[
+      #align(center + horizon)[
+        #image(
+          "../build/assets/libresign-logo-primary.svg",
+          width: 78%,
+          height: if slides { 30mm } else { auto },
+          fit: "contain",
           alt: "Primary LibreSign logo on a light green field",
         )
       ]
     ],
 
-    block(fill: theme.ink, inset: 8mm, height: 58mm)[
+    block(fill: theme.ink, inset: if slides { 6mm } else { 8mm }, height: if slides { 44mm } else { 58mm })[
       #align(center + horizon)[
         #image(
           "../build/assets/libresign-logo-reversed.svg",
           width: 78%,
+          height: if slides { 30mm } else { auto },
+          fit: "contain",
           alt: "White LibreSign logo on a dark neutral background",
         )
       ]
     ],
-    block(fill: theme.accent, inset: 8mm, height: 58mm)[
+    block(fill: theme.accent, inset: if slides { 6mm } else { 8mm }, height: if slides { 44mm } else { 58mm })[
       #align(center + horizon)[
         #image(
           "../build/assets/libresign-logo-reversed.svg",
           width: 78%,
+          height: if slides { 30mm } else { auto },
+          fit: "contain",
           alt: "White LibreSign logo on the primary teal background",
         )
       ]
