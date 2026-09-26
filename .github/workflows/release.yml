@@ -27,17 +27,22 @@ jobs:
         run: |
           python scripts/build_assets.py --output build/assets
           typst compile --root . --font-path source/fonts --pdf-standard ua-1 manual/main.typ build/libresign-brand-manual.pdf
+          typst compile --root . --font-path source/fonts --pdf-standard ua-1 --input format=slides manual/main.typ build/libresign-brand-manual-slides.pdf
           cp build/assets/libresign-logo.svg build/libresign-logo.svg
           cp build/assets/libresign-logo.pdf build/libresign-logo.pdf
           cp build/assets/libresign-logo.png build/libresign-logo.png
           cp build/assets/libresign-logo-reversed.svg build/libresign-logo-reversed.svg
-          sha256sum             build/libresign-brand-manual.pdf             build/libresign-logo.svg             build/libresign-logo.pdf             build/libresign-logo.png             build/libresign-logo-reversed.svg             > build/SHA256SUMS
+          sha256sum             build/libresign-brand-manual.pdf             build/libresign-brand-manual-slides.pdf             build/libresign-logo.svg             build/libresign-logo.pdf             build/libresign-logo.png             build/libresign-logo-reversed.svg             > build/SHA256SUMS
       - name: Validate PDF/UA-1 with veraPDF
         run: |
           docker run --rm \
             -v "$PWD/build:/data:ro" \
             verapdf/cli:latest \
             --flavour ua1 --format text /data/libresign-brand-manual.pdf
+          docker run --rm \
+            -v "$PWD/build:/data:ro" \
+            verapdf/cli:latest \
+            --flavour ua1 --format text /data/libresign-brand-manual-slides.pdf
       - name: Publish versioned release
         env:
           GH_TOKEN: ${{ github.token }}
@@ -45,4 +50,4 @@ jobs:
           if ! gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
             gh release create "$GITHUB_REF_NAME"               --generate-notes               --title "libresign brand $GITHUB_REF_NAME"
           fi
-          gh release upload "$GITHUB_REF_NAME"             build/libresign-brand-manual.pdf             build/libresign-logo.svg             build/libresign-logo.pdf             build/libresign-logo.png             build/libresign-logo-reversed.svg             build/SHA256SUMS             --clobber
+          gh release upload "$GITHUB_REF_NAME"             build/libresign-brand-manual.pdf             build/libresign-brand-manual-slides.pdf             build/libresign-logo.svg             build/libresign-logo.pdf             build/libresign-logo.png             build/libresign-logo-reversed.svg             build/SHA256SUMS             --clobber
