@@ -11,7 +11,9 @@
   title: "LibreSign Brand Manual",
   author: "LibreSign contributors",
 )
-#set text(font: theme.body-font, lang: "en", size: 10.5pt, fill: theme.ink)
+#let slides = sys.inputs.at("format", default: "a4") == "slides"
+#set page(width: if slides { 338.667mm } else { 210mm }, height: if slides { 190.5mm } else { 297mm })
+#set text(font: theme.body-font, lang: "en", size: if slides { 12pt } else { 10.5pt }, fill: theme.ink)
 #set par(leading: 0.72em, spacing: 0.7em, justify: false)
 #set list(indent: 0pt, body-indent: 1.2em)
 #cover(
@@ -275,7 +277,13 @@
     gutter: 7mm,
     block(fill: white, inset: 7mm, height: 44mm)[
       #align(center + horizon)[
-        #image("../build/assets/libresign-logo-primary.svg", width: 82%, alt: "Primary full-color LibreSign logo")
+        #image(
+          "../build/assets/libresign-logo-primary.svg",
+          width: 82%,
+          height: 30mm,
+          fit: "contain",
+          alt: "Primary full-color LibreSign logo",
+        )
       ]
     ],
     block(fill: theme.ink, inset: 7mm, height: 44mm)[
@@ -283,6 +291,8 @@
         #image(
           "../build/assets/libresign-logo-reversed.svg",
           width: 82%,
+          height: 30mm,
+          fit: "contain",
           alt: "White LibreSign logo for dark backgrounds",
         )
       ]
@@ -290,7 +300,13 @@
 
     block(fill: white, inset: 7mm, height: 44mm)[
       #align(center + horizon)[
-        #image("../build/assets/libresign-logo-monochrome.svg", width: 82%, alt: "Black one-color LibreSign logo")
+        #image(
+          "../build/assets/libresign-logo-monochrome.svg",
+          width: 82%,
+          height: 30mm,
+          fit: "contain",
+          alt: "Black one-color LibreSign logo",
+        )
       ]
     ],
     [
@@ -380,19 +396,19 @@
 #manual-page(theme, [Visual system], [Digital palette])[
   The product and website can use a wider digital color palette. These colors are separate from the colors inside the official logo.
 
-  #v(5mm)
+  #v(if slides { 2mm } else { 5mm })
   #swatch("Primary Teal", "#184c4e", note: "Primary brand and interface field")
-  #v(4mm)
+  #v(if slides { 1mm } else { 4mm })
   #swatch("Primary Hover", "#0f3739", note: "Interactive depth")
-  #v(4mm)
+  #v(if slides { 1mm } else { 4mm })
   #swatch("Primary Dark", "#0b5f55", note: "Dark supporting teal")
-  #v(4mm)
+  #v(if slides { 1mm } else { 4mm })
   #swatch("Secondary Cyan", "#00a3be", note: "Secondary digital accent")
-  #v(4mm)
+  #v(if slides { 1mm } else { 4mm })
   #swatch("Light Surface", "#f7fafc", note: "Light background field")
-  #v(4mm)
+  #v(if slides { 1mm } else { 4mm })
   #swatch("Dark Text", "#2d3748", note: "Readable text on light surfaces")
-  #v(6mm)
+  #v(if slides { 2mm } else { 6mm })
 
   Colors for success, warnings, focus, and errors belong to the product design system and must be checked for accessibility in the place where they are used.
 ]
@@ -540,7 +556,7 @@
 #manual-page(theme, [Usage], [Correct and incorrect use])[
   Brand rules are easier to follow when correct and incorrect examples are visible.
 
-  #v(6mm)
+  #v(if slides { 2mm } else { 6mm })
   #rule-pair(
     theme,
     [CORRECT],
@@ -549,24 +565,32 @@
         #image(
           "../build/assets/libresign-logo-primary.svg",
           width: 72%,
+          height: if slides { 18mm } else { auto },
+          fit: "contain",
           alt: "Correct unmodified LibreSign logo on white",
         )
       ]
-      #v(4mm)
+      #v(if slides { 1mm } else { 4mm })
       Use the official artwork at its original proportions and preserve clear space.
     ],
     [DON'T ROTATE],
     [
       #align(center)[
         #rotate(8deg)[
-          #image("../build/assets/libresign-logo-primary.svg", width: 72%, alt: "Incorrect rotated LibreSign logo")
+          #image(
+            "../build/assets/libresign-logo-primary.svg",
+            width: 72%,
+            height: if slides { 18mm } else { auto },
+            fit: "contain",
+            alt: "Incorrect rotated LibreSign logo",
+          )
         ]
       ]
-      #v(4mm)
+      #v(if slides { 1mm } else { 4mm })
       Do not rotate, skew, distort, or otherwise reinterpret the mark.
     ],
   )
-  #v(7mm)
+  #v(if slides { 2mm } else { 7mm })
   #rule-pair(
     theme,
     [CORRECT CLEAR SPACE],
@@ -576,11 +600,13 @@
           #image(
             "../build/assets/libresign-logo-primary.svg",
             width: 72%,
+            height: if slides { 18mm } else { auto },
+            fit: "contain",
             alt: "LibreSign logo with generous clear space",
           )
         ]
       ]
-      #v(4mm)
+      #v(if slides { 1mm } else { 4mm })
       Keep surrounding text, borders, and partner marks outside the exclusion area.
     ],
     [DON'T CROWD],
@@ -593,12 +619,14 @@
           image(
             "../build/assets/libresign-logo-primary.svg",
             width: 100%,
+            height: if slides { 18mm } else { auto },
+            fit: "contain",
             alt: "LibreSign logo crowded by nearby text",
           ),
           text(font: theme.heading-font, size: 9pt, weight: "bold", fill: theme.ink)[PARTNER],
         )
       ]
-      #v(4mm)
+      #v(if slides { 1mm } else { 4mm })
       Do not place other content inside the required empty space around the logo.
     ],
   )

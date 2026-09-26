@@ -27,6 +27,14 @@ typst compile \
   --pdf-standard ua-1 \
   manual/main.typ \
   build/brand-manual.pdf
+
+typst compile \
+  --root . \
+  --font-path source/fonts \
+  --pdf-standard ua-1 \
+  --input format=slides \
+  manual/main.typ \
+  build/brand-manual-slides.pdf
 ```
 
 The same asset generator is used by local builds, CI, the continuous `latest` release, and versioned releases.
@@ -61,3 +69,5 @@ For editor diagnostics, Tinymist is the recommended language server. Enable its 
 - avoid brand-specific dead code and unused exports in shared component files;
 - keep source-derived technical diagrams outside Typst when geometry must remain authoritative; Typst should compose and scale those generated vectors;
 - do not add a Typst package dependency when a small local function is sufficient.
+
+The 16:9 PDF uses the same Typst source and brand rules. It is a widescreen reading format, not an abridged speaker deck; individual topics can flow onto more than one slide. Review both PDFs at their intended display size before publishing.
