@@ -499,59 +499,82 @@
   "section-usage",
 )
 
-#manual-page(theme, [Usage], [Application])[
-  #grid(
-    columns: (1fr, 1fr),
-    gutter: 7mm,
-    block(fill: white, inset: if slides { 6mm } else { 8mm }, height: if slides { 44mm } else { 58mm })[
-      #align(center + horizon)[
-        #image(
-          "../build/assets/libresign-logo-primary.svg",
-          width: 78%,
-          height: if slides { 30mm } else { auto },
-          fit: "contain",
-          alt: "Primary LibreSign logo on white",
-        )
-      ]
-    ],
-    block(fill: theme.soft, inset: if slides { 6mm } else { 8mm }, height: if slides { 44mm } else { 58mm })[
-      #align(center + horizon)[
-        #image(
-          "../build/assets/libresign-logo-primary.svg",
-          width: 78%,
-          height: if slides { 30mm } else { auto },
-          fit: "contain",
-          alt: "Primary LibreSign logo on a light green field",
-        )
-      ]
-    ],
+#manual-page(theme, [Usage], [Logo on backgrounds])[
+  Different backgrounds require the right logo version. The rule is simple: preserve contrast, legibility, and clear space.
 
-    block(fill: theme.ink, inset: if slides { 6mm } else { 8mm }, height: if slides { 44mm } else { 58mm })[
-      #align(center + horizon)[
+  #let app-example(label, background, foreground, logo, alt, note) = block(
+    fill: background,
+    inset: if slides { 5mm } else { 6mm },
+    height: if slides { 49mm } else { 48mm },
+    [
+      #text(font: theme.heading-font, size: if slides { 8pt } else { 7.5pt }, weight: "bold", fill: foreground)[#label]
+      #v(if slides { 2mm } else { 3mm })
+      #align(center)[
         #image(
-          "../build/assets/libresign-logo-reversed.svg",
-          width: 78%,
-          height: if slides { 30mm } else { auto },
+          logo,
+          width: 74%,
+          height: if slides { 19mm } else { 17mm },
           fit: "contain",
-          alt: "White LibreSign logo on a dark neutral background",
+          alt: alt,
         )
       ]
-    ],
-    block(fill: theme.accent, inset: if slides { 6mm } else { 8mm }, height: if slides { 44mm } else { 58mm })[
-      #align(center + horizon)[
-        #image(
-          "../build/assets/libresign-logo-reversed.svg",
-          width: 78%,
-          height: if slides { 30mm } else { auto },
-          fit: "contain",
-          alt: "White LibreSign logo on the primary teal background",
-        )
-      ]
+      #v(if slides { 1.5mm } else { 2mm })
+      #text(size: if slides { 8.5pt } else { 8pt }, fill: foreground)[#note]
     ],
   )
-  #v(7mm)
 
-  Use the primary logo on light backgrounds and the white logo on dark or strong-color backgrounds. Always verify contrast and clear space.
+  #grid(
+    columns: if slides { (1fr, 1fr, 1fr) } else { (1fr, 1fr) },
+    gutter: if slides { 4mm } else { 5mm },
+    #app-example(
+      [CORRECT · LIGHT BACKGROUND],
+      white,
+      theme.ink,
+      "../build/assets/libresign-logo-primary.svg",
+      "Primary LibreSign logo on white",
+      [Use the primary logo on light, visually stable surfaces.],
+    ),
+    #app-example(
+      [CORRECT · DARK BACKGROUND],
+      theme.ink,
+      white,
+      "../build/assets/libresign-logo-reversed.svg",
+      "White LibreSign logo on a dark background",
+      [Use the white logo on dark or strong-color backgrounds.],
+    ),
+    #app-example(
+      [CORRECT · BRAND COLOR],
+      theme.accent,
+      white,
+      "../build/assets/libresign-logo-reversed.svg",
+      "White LibreSign logo on the primary teal background",
+      [On saturated brand fields, prefer the white version for clear contrast.],
+    ),
+    #app-example(
+      [DON'T · LOW CONTRAST],
+      theme.ink,
+      white,
+      "../build/assets/libresign-logo-primary.svg",
+      "Incorrect primary LibreSign logo on a dark background",
+      [Do not use the primary logo when the background makes it hard to read.],
+    ),
+    #app-example(
+      [DON'T · WHITE ON LIGHT],
+      theme.soft,
+      theme.ink,
+      "../build/assets/libresign-logo-reversed.svg",
+      "Incorrect white LibreSign logo on a light background",
+      [Do not use the white logo on light backgrounds when it loses definition.],
+    ),
+    #app-example(
+      [UNSTABLE BACKGROUND],
+      theme.soft,
+      theme.ink,
+      "../build/assets/libresign-logo-primary.svg",
+      "LibreSign logo demonstrating placement on a visually stable field",
+      [On photos, textures, or gradients, move the logo to a quiet area or use a solid field that preserves contrast and clear space.],
+    ),
+  )
 ]
 
 #manual-page(theme, [Usage], [Use with partners and third parties])[
