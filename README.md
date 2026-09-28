@@ -13,7 +13,16 @@ Canonical, version-controlled source for the current LibreSign brand system.
 
 Public guide: https://libresign.coop/brand
 
-Latest development manual: https://github.com/LibreSign/brand/releases/download/latest/libresign-brand-manual.pdf
+## Brand manual formats
+
+The brand manual is published in two PDF layouts generated from the same canonical Typst source and the same brand rules:
+
+| Format | Intended use | Latest build |
+| --- | --- | --- |
+| A4 portrait | Document-oriented reading, review, and printing | [LibreSign brand manual — A4](https://github.com/LibreSign/brand/releases/download/latest/libresign-brand-manual.pdf) |
+| 16:9 widescreen | Screen-oriented reading and presentation | [LibreSign brand manual — 16:9](https://github.com/LibreSign/brand/releases/download/latest/libresign-brand-manual-slides.pdf) |
+
+The 16:9 edition is not a separate manual or an abridged speaker deck. Both formats are rendered from `manual/main.typ`; only the layout adapts to the target page ratio. Some topics may therefore span more than one 16:9 page.
 
 ## Contract
 
